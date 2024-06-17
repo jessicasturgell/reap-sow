@@ -1,0 +1,160 @@
+{
+  "crops": [
+    {
+      "id": 1,
+      "name": "Tomato",
+      "description": "A red, juicy fruit that is often used in salads, sauces, and cooking.",
+      "care_instructions": "Plant in full sun, water regularly, and provide support for the vines."
+    },
+    {
+      "id": 2,
+      "name": "Carrot",
+      "description": "A root vegetable that is typically orange in color and is often eaten raw or cooked.",
+      "care_instructions": "Plant in loose, sandy soil, water consistently, and thin seedlings to avoid overcrowding."
+    },
+    {
+      "id": 3,
+      "name": "Lettuce",
+      "description": "A leafy green vegetable that is commonly used in salads and sandwiches.",
+      "care_instructions": "Plant in partial shade, keep the soil moist, and harvest leaves regularly to encourage new growth."
+    },
+    {
+      "id": 4,
+      "name": "Strawberry",
+      "description": "A small, red fruit that is sweet and often eaten fresh, in desserts, or as a preserve.",
+      "care_instructions": "Plant in well-drained soil, water regularly, and protect from pests and birds."
+    },
+    {
+      "id": 5,
+      "name": "Corn",
+      "description": "A tall plant that produces ears of kernels, which are used as a vegetable, grain, or livestock feed.",
+      "care_instructions": "Plant in full sun, space plants adequately, and ensure even watering, especially during flowering and ear development."
+    },
+    {
+      "id": 6,
+      "name": "Potato",
+      "description": "A starchy tuber that is commonly used in cooking, often boiled, baked, or fried.",
+      "care_instructions": "Plant in well-drained soil, hill up soil around plants as they grow, and water consistently, especially during tuber formation."
+    },
+    {
+      "id": 7,
+      "name": "Pepper",
+      "description": "A vegetable that comes in various colors and heat levels, used in cooking and salads.",
+      "care_instructions": "Plant in full sun, keep soil consistently moist, and support plants as needed."
+    },
+    {
+      "id": 8,
+      "name": "Cucumber",
+      "description": "A green, elongated vegetable that is often eaten raw in salads or pickled.",
+      "care_instructions": "Plant in full sun, provide a trellis or support, and water regularly, especially during fruit development."
+    },
+    {
+      "id": 9,
+      "name": "Spinach",
+      "description": "A leafy green vegetable that is high in nutrients and often used in salads, smoothies, and cooking.",
+      "care_instructions": "Plant in partial shade, keep soil moist, and harvest leaves regularly to encourage new growth."
+    },
+    {
+      "id": 10,
+      "name": "Onion",
+      "description": "A bulbous vegetable that is used as a flavoring in many dishes, known for its pungent aroma and taste.",
+      "care_instructions": "Plant in well-drained soil, water regularly, and thin seedlings to ensure proper bulb development."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "GageHickle",
+      "email": "gagehickle@email.com"
+    },
+    {
+      "id": 2,
+      "username": "EmilioCummings",
+      "email": "emiliocummings@email.com"
+    },
+    {
+      "id": 3,
+      "username": "AntoinetteRobel",
+      "email": "antoinetterobel@email.com"
+    },
+    {
+      "id": 4,
+      "username": "JavierBlock",
+      "email": "javierblock@email.com"
+    },
+    {
+      "id": 5,
+      "username": "LonnieKemmer",
+      "email": "lonniekemmer@email.com"
+    }
+  ],
+  "checklist": [
+    {
+      "id": 1,
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "isHealthy": true,
+      "hasPests": false,
+      "timestamp": "2024-06-16T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "isHealthy": true,
+      "hasPests": false,
+      "timestamp": "2024-06-16T12:15:00Z"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "gardenBedId": 2,
+      "isWatered": false,
+      "isHealthy": true,
+      "hasPests": true,
+      "timestamp": "2024-06-16T08:00:00Z"
+    }
+  ],
+  "gardenPlots": [
+    {
+      "id": 1,
+      "userId": 1,
+      "plantId": 1,
+      "gardenBedId": 1,
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "plantId": 2,
+      "gardenBedId": 1,
+      "x": 2,
+      "y": 1
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "plantId": 3,
+      "gardenBedId": 2,
+      "x": 1,
+      "y": 1
+    }
+  ],
+  "gardenBed": [
+    {
+      "id": 1,
+      "userId": 1,
+      "length": 4,
+      "width": 3
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "length": 5,
+      "width": 2
+    }
+  ]
+}
