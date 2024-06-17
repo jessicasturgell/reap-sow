@@ -1,13 +1,13 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { createUser, getUserByEmail } from "../services/userService.jsx"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { createUser, getUserByEmail } from "../../services/userService.jsx";
 
 export const Register = (props) => {
   const [user, setUser] = useState({
     username: "",
     email: "",
-  })
-  let navigate = useNavigate()
+  });
+  let navigate = useNavigate();
 
   const registerNewUser = () => {
     createUser(user).then((createdUser) => {
@@ -17,31 +17,31 @@ export const Register = (props) => {
           JSON.stringify({
             id: createdUser.id,
           })
-        )
+        );
 
-        navigate("/")
+        navigate("/");
       }
-    })
-  }
+    });
+  };
 
   const handleRegister = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     getUserByEmail(user.email).then((response) => {
       if (response.length > 0) {
         // Duplicate email. No good.
-        window.alert("Account with that email address already exists")
+        window.alert("Account with that email address already exists");
       } else {
         // Good email, create user.
-        registerNewUser()
+        registerNewUser();
       }
-    })
-  }
+    });
+  };
 
   const updateUser = (evt) => {
-    const copy = { ...user }
-    copy[evt.target.id] = evt.target.value
-    setUser(copy)
-  }
+    const copy = { ...user };
+    copy[evt.target.id] = evt.target.value;
+    setUser(copy);
+  };
 
   return (
     <main>
@@ -73,12 +73,10 @@ export const Register = (props) => {
         </fieldset>
         <fieldset>
           <div>
-            <button type="submit">
-              Register
-            </button>
+            <button type="submit">Register</button>
           </div>
         </fieldset>
       </form>
     </main>
-  )
-}
+  );
+};

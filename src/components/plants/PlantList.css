@@ -1,0 +1,23 @@
+body {
+    background-color: #fefae0;
+}
+
+.plantlist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header-container {
+    background-color: #e9edc9;
+    padding: 1rem 1rem 0.25rem 1rem;
+    margin: 0 0 1rem 0;
+}
+
+.h-2 {
+    color: #283618;
+}
+
+.text-block {
+    color: #283618;
+}

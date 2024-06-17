@@ -1,64 +1,74 @@
 {
-  "crops": [
+  "plants": [
     {
       "id": 1,
       "name": "Tomato",
       "description": "A red, juicy fruit that is often used in salads, sauces, and cooking.",
-      "care_instructions": "Plant in full sun, water regularly, and provide support for the vines."
+      "care_instructions": "Plant in full sun, water regularly, and provide support for the vines.",
+      "img": "https://media.istockphoto.com/id/171579643/photo/tomato-greenhouse.jpg?s=612x612&w=0&k=20&c=BLtIrrBprkZlIHNfSYIhkm3aebVUjqxsS-Yoqa1ss08="
     },
     {
       "id": 2,
       "name": "Carrot",
       "description": "A root vegetable that is typically orange in color and is often eaten raw or cooked.",
-      "care_instructions": "Plant in loose, sandy soil, water consistently, and thin seedlings to avoid overcrowding."
+      "care_instructions": "Plant in loose, sandy soil, water consistently, and thin seedlings to avoid overcrowding.",
+      "img": "https://media.istockphoto.com/id/1256809289/photo/freshly-dug-carrots-with-tops-on-the-ground-large-juicy-unwashed-carrots-in-a-field-on-the.jpg?s=612x612&w=0&k=20&c=QrQ8cfX7xCnXb5Xp7mjxqVgKj9YdlU4rbYuODxUcaAc="
     },
     {
       "id": 3,
       "name": "Lettuce",
       "description": "A leafy green vegetable that is commonly used in salads and sandwiches.",
-      "care_instructions": "Plant in partial shade, keep the soil moist, and harvest leaves regularly to encourage new growth."
+      "care_instructions": "Plant in partial shade, keep the soil moist, and harvest leaves regularly to encourage new growth.",
+      "img": "https://as1.ftcdn.net/v2/jpg/01/98/94/04/1000_F_198940490_ZFzPHrLGPcGicdP9kVmmB3fLGiZQqlvG.jpg"
     },
     {
       "id": 4,
       "name": "Strawberry",
       "description": "A small, red fruit that is sweet and often eaten fresh, in desserts, or as a preserve.",
-      "care_instructions": "Plant in well-drained soil, water regularly, and protect from pests and birds."
+      "care_instructions": "Plant in well-drained soil, water regularly, and protect from pests and birds.",
+      "img": "https://media.istockphoto.com/id/173923673/photo/summer-strawberry-picking.jpg?s=612x612&w=0&k=20&c=yVAQMRG_kT-2wP90K9Jj0Myzm-Syxn7eMKARFLxvisU="
     },
     {
       "id": 5,
       "name": "Corn",
       "description": "A tall plant that produces ears of kernels, which are used as a vegetable, grain, or livestock feed.",
-      "care_instructions": "Plant in full sun, space plants adequately, and ensure even watering, especially during flowering and ear development."
+      "care_instructions": "Plant in full sun, space plants adequately, and ensure even watering, especially during flowering and ear development.",
+      "img": "https://media.istockphoto.com/id/1485792634/photo/ripe-yellow-corn-cob-on-the-field.jpg?s=612x612&w=0&k=20&c=5Lhbh5a15DNMdyaxBPGR4XAIjTPXz1Ct52i2WcoVOQs="
     },
     {
       "id": 6,
       "name": "Potato",
       "description": "A starchy tuber that is commonly used in cooking, often boiled, baked, or fried.",
-      "care_instructions": "Plant in well-drained soil, hill up soil around plants as they grow, and water consistently, especially during tuber formation."
+      "care_instructions": "Plant in well-drained soil, hill up soil around plants as they grow, and water consistently, especially during tuber formation.",
+      "img": "https://media.istockphoto.com/id/1455032362/photo/man-digging-potatoes-with-a-shovel-in-the-garden.jpg?s=612x612&w=0&k=20&c=sdbtR8N3ixXSI6kyiy7TmH8ErWmUq2sSQMFsRFHA7zQ="
     },
     {
       "id": 7,
       "name": "Pepper",
       "description": "A vegetable that comes in various colors and heat levels, used in cooking and salads.",
-      "care_instructions": "Plant in full sun, keep soil consistently moist, and support plants as needed."
+      "care_instructions": "Plant in full sun, keep soil consistently moist, and support plants as needed.",
+      "img": "https://as2.ftcdn.net/v2/jpg/02/29/57/39/1000_F_229573982_24ujNJ0ZJNoMykFWvF8Ssb44mlQz2rDv.jpg"
     },
     {
       "id": 8,
       "name": "Cucumber",
       "description": "A green, elongated vegetable that is often eaten raw in salads or pickled.",
-      "care_instructions": "Plant in full sun, provide a trellis or support, and water regularly, especially during fruit development."
+      "care_instructions": "Plant in full sun, provide a trellis or support, and water regularly, especially during fruit development.",
+      "img": "https://media.istockphoto.com/id/1346211406/photo/two-cucumbers-ripen-on-a-bed-in-the-sun.jpg?s=612x612&w=0&k=20&c=rS4CrDhXXLxLjuPvHF2aMPwct6w_F_a1svL-pLXX4tA="
     },
     {
       "id": 9,
       "name": "Spinach",
       "description": "A leafy green vegetable that is high in nutrients and often used in salads, smoothies, and cooking.",
-      "care_instructions": "Plant in partial shade, keep soil moist, and harvest leaves regularly to encourage new growth."
+      "care_instructions": "Plant in partial shade, keep soil moist, and harvest leaves regularly to encourage new growth.",
+      "img": "https://media.istockphoto.com/id/1179990617/photo/african-american-woman-examining-spinich-leaves-in-her-organic-garden.jpg?s=612x612&w=0&k=20&c=UbesXVZu1ygQ2L50tWbzx1nFpbTRaMFUiCwMVCE2H5Y="
     },
     {
       "id": 10,
       "name": "Onion",
       "description": "A bulbous vegetable that is used as a flavoring in many dishes, known for its pungent aroma and taste.",
-      "care_instructions": "Plant in well-drained soil, water regularly, and thin seedlings to ensure proper bulb development."
+      "care_instructions": "Plant in well-drained soil, water regularly, and thin seedlings to ensure proper bulb development.",
+      "img": "https://static6.depositphotos.com/1000503/656/i/450/depositphotos_6560164-stock-photo-onion-bulbs.jpg"
     }
   ],
   "users": [
