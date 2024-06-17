@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Outlet, Route, Routes } from "react-router-dom";
+import { NavBar } from "../nav/NavBar.jsx";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -10,5 +12,17 @@ export const ApplicationViews = () => {
     setCurrentUser(reapUserObject);
   }, []);
 
-  return <h1>Plants</h1>;
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <NavBar />
+            <Outlet />
+          </>
+        }
+      />
+    </Routes>
+  );
 };
