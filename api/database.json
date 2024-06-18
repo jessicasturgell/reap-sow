@@ -98,7 +98,7 @@
       "email": "lonniekemmer@email.com"
     }
   ],
-  "checklist": [
+  "checklists": [
     {
       "id": 1,
       "userId": 1,
@@ -146,6 +146,14 @@
     },
     {
       "id": 3,
+      "userId": 1,
+      "plantId": 4,
+      "gardenBedId": 3,
+      "x": 3,
+      "y": 1
+    },
+    {
+      "id": 4,
       "userId": 2,
       "plantId": 3,
       "gardenBedId": 2,
@@ -153,17 +161,26 @@
       "y": 1
     }
   ],
-  "gardenBed": [
+  "gardenBeds": [
     {
       "id": 1,
+      "name": "My Garden",
       "userId": 1,
       "length": 4,
       "width": 3
     },
     {
       "id": 2,
+      "name": "My Garden",
       "userId": 2,
       "length": 5,
+      "width": 2
+    },
+    {
+      "id": 3,
+      "name": "My Garden 2",
+      "userId": 1,
+      "length": 6,
       "width": 2
     }
   ]
