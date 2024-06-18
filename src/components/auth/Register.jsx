@@ -1,6 +1,8 @@
+import "./Auth.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createUser, getUserByEmail } from "../../services/userService.jsx";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 export const Register = (props) => {
   const [user, setUser] = useState({
@@ -44,39 +46,49 @@ export const Register = (props) => {
   };
 
   return (
-    <main>
-      <form onSubmit={handleRegister}>
-        <h1>reap / sow</h1>
-        <h2>Please Register</h2>
-        <fieldset>
-          <div>
-            <input
-              onChange={updateUser}
-              type="text"
-              id="username"
-              placeholder="Enter your desired username"
-              required
-              autoFocus
-            />
-          </div>
-        </fieldset>
-        <fieldset>
-          <div>
-            <input
-              onChange={updateUser}
-              type="email"
-              id="email"
-              placeholder="Email address"
-              required
-            />
-          </div>
-        </fieldset>
-        <fieldset>
-          <div>
-            <button type="submit">Register</button>
-          </div>
-        </fieldset>
-      </form>
-    </main>
+    <>
+      <div className="center-container">
+        <div className="auth-decoration">
+          <h1 className="center pb-3">
+            <div className="sign">reap / sow</div>
+          </h1>
+          <h2 className="center">Please Register</h2>
+          <Form onSubmit={handleRegister}>
+            <FormGroup floating>
+              <Input
+                id="username"
+                name="username"
+                type="username"
+                className="center wide"
+                onChange={updateUser}
+                placeholder="Enter your desired username"
+                required
+              />
+              <Label for="exampleEmail">Username</Label>
+            </FormGroup>
+            <FormGroup floating>
+              <Input
+                id="email"
+                name="email"
+                placeholder="Email address"
+                type="email"
+                className="center wide"
+                onChange={updateUser}
+                required
+              />
+              <Label for="email">Email</Label>
+            </FormGroup>
+            <div className="center">
+              <Button color="success" type="submit">
+                Register
+              </Button>
+            </div>
+          </Form>
+          <Link className="center mt-2" to="/login">
+            Already have an account?
+          </Link>
+        </div>
+      </div>
+    </>
   );
 };

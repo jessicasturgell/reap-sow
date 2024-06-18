@@ -1,3 +1,4 @@
+import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import { ApplicationViews } from "./views/ApplicationViews.jsx";
 import { Authorized } from "./views/Authorized.jsx";

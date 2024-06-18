@@ -1,7 +1,9 @@
+import "./Auth.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { getUserByEmail } from "../../services/userService.jsx";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 export const Login = () => {
   const [email, set] = useState("gagehickle@email.com");
@@ -28,33 +30,36 @@ export const Login = () => {
   };
 
   return (
-    <main>
-      <section>
-        <form onSubmit={handleLogin}>
-          <h1>reap / sow</h1>
-          <h2>Please sign in</h2>
-          <fieldset>
-            <div>
-              <input
-                type="email"
-                value={email}
-                onChange={(evt) => set(evt.target.value)}
-                placeholder="Email address"
-                required
-                autoFocus
-              />
-            </div>
-          </fieldset>
-          <fieldset>
-            <div>
-              <button type="submit">Sign in</button>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-      <section>
-        <Link to="/register">Not a member yet?</Link>
-      </section>
-    </main>
+    <div className="center-container">
+      <div className="auth-decoration">
+        <h1 className="center pb-3">
+          <div className="sign">reap / sow</div>
+        </h1>
+        <h2 className="center">Please sign in to view your garden!</h2>
+        <Form onSubmit={handleLogin}>
+          <FormGroup floating>
+            <Input
+              id="email"
+              name="email"
+              placeholder="Email"
+              type="email"
+              value={email}
+              onChange={(evt) => set(evt.target.value)}
+              required
+              className="center wide"
+            />
+            <Label for="email">Email</Label>
+          </FormGroup>
+          <div className="center">
+            <Button color="success" type="submit">
+              Sign in
+            </Button>
+          </div>
+        </Form>
+        <Link className="center mt-2" to="/register">
+          Not a member yet?
+        </Link>
+      </div>
+    </div>
   );
 };

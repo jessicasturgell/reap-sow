@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.wide {
+    width: 500px;
+}
+
+.auth-decoration {
+    background-color: #ccd5ae;
+    padding: 5rem;
+    border-radius: 10px;
+}
+
+h1 {
+    font-family: "Reenie Beanie", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 72px;
+    color: #fefae0;
+}
+
+h2 {
+    font-size: large;
+    color: #283618;
+}
+
+.sign {
+    background-color: #b8ab9e;
+    background-image: url(https://images.pexels.com/photos/172289/pexels-photo-172289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-blend-mode: overlay;
+    border-radius: 5px;
+    padding: 0 1rem 0 1rem;
+    box-shadow: 5px 5px 5px #626d55;
+    transform: rotate(3deg);
+}

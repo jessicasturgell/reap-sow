@@ -1,0 +1,10 @@
+.banners img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.banners {
+  text-shadow: 1px 1px 5px black;
+}
