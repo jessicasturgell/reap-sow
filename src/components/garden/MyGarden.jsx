@@ -1,8 +1,11 @@
 import "./MyGarden.css";
 import { useEffect, useState } from "react";
-import { getGardenBedsByUserId } from "../../services/gardenService.jsx";
+import {
+  deleteGardenBed,
+  getGardenBedsByUserId,
+} from "../../services/gardenService.jsx";
 import { getPlantsByGardenPlot } from "../../services/plantService.jsx";
-import { Button, Form, FormGroup, FormText, Input, Label } from "reactstrap";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 export const MyGarden = ({ currentUser }) => {
@@ -10,7 +13,7 @@ export const MyGarden = ({ currentUser }) => {
   const [myPlants, setMyPlants] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const getAndSetGardenBeds = () => {
     if (currentUser?.id) {
       getGardenBedsByUserId(currentUser.id)
         .then((gardenBedsArray) => {
@@ -20,6 +23,10 @@ export const MyGarden = ({ currentUser }) => {
           console.error("Error fetching garden beds:", error);
         });
     }
+  };
+
+  useEffect(() => {
+    getAndSetGardenBeds(); // Fetches garden beds
   }, [currentUser]); // Trigger effect whenever currentUser changes
 
   useEffect(() => {
@@ -33,6 +40,12 @@ export const MyGarden = ({ currentUser }) => {
         });
     }
   }, [currentUser]); // Trigger effect whenever currentUser changes
+
+  const handleDelete = (gardenBed) => {
+    deleteGardenBed(gardenBed.id).then(() => {
+      getAndSetGardenBeds();
+    });
+  };
 
   return (
     <>
@@ -101,6 +114,25 @@ export const MyGarden = ({ currentUser }) => {
                       <Button color="success">Save</Button>
                     </Form>
                   </div>
+                  <Button
+                    color="warning"
+                    onClick={() => {
+                      window.open(
+                        "/garden/edit",
+                        "newwindow",
+                        "width=600,height=400"
+                      );
+                    }}
+                  >
+                    Edit Bed
+                  </Button>
+                  <Button
+                    className="ms-1"
+                    color="danger"
+                    onClick={() => handleDelete(gardenBed)}
+                  >
+                    Delete Bed
+                  </Button>
                 </div>
               );
             })}
@@ -109,7 +141,11 @@ export const MyGarden = ({ currentUser }) => {
             className="garden-btn"
             color="success"
             onClick={() => {
-              navigate("/garden/create");
+              window.open(
+                "/garden/create",
+                "newwindow",
+                "width=600,height=400"
+              );
             }}
           >
             Create New Garden Bed

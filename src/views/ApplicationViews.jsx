@@ -4,6 +4,8 @@ import { NavBar } from "../components/nav/NavBar.jsx";
 import { PlantList } from "../components/plants/Plant.jsx";
 import { Welcome } from "../components/welcome/Welcome.jsx";
 import { MyGarden } from "../components/garden/MyGarden.jsx";
+import { GardenBedForm } from "../components/forms/CreateGardenBed.jsx";
+import { EditGardenBed } from "../components/forms/EditGardenBed.jsx";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -29,7 +31,8 @@ export const ApplicationViews = () => {
         <Route index element={<Welcome />} />
         <Route path="/garden">
           <Route index element={<MyGarden currentUser={currentUser} />} />
-          <Route path="create" element={<>TO DO</>} />
+          <Route path="create" element={<GardenBedForm currentUser={currentUser} />} />
+          <Route path="edit" element={<EditGardenBed currentUser={currentUser} />} />
         </Route>
         <Route path="/plants" element={<PlantList />} />
       </Route>
