@@ -46,3 +46,14 @@ h2 {
     box-shadow: 5px 5px 5px #626d55;
     transform: rotate(3deg);
 }
+
+.sign2 {
+    background-color: #b8ab9e;
+    background-image: url(https://images.pexels.com/photos/172289/pexels-photo-172289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-blend-mode: overlay;
+    border-radius: 5px;
+    padding: 0 1rem 0 1rem;
+    box-shadow: 5px 5px 5px #626d55;
+    transform: rotate(-3deg);
+}

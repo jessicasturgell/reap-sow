@@ -50,7 +50,7 @@ export const Register = (props) => {
       <div className="center-container">
         <div className="auth-decoration">
           <h1 className="center pb-3">
-            <div className="sign">reap / sow</div>
+            <div className="sign2">reap / sow</div>
           </h1>
           <h2 className="center">Please Register</h2>
           <Form onSubmit={handleRegister}>

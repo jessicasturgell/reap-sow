@@ -2,7 +2,6 @@ import "./PlantList.css";
 import React, { useEffect, useState } from "react";
 import { getAllPlants } from "../../services/plantService.jsx";
 import {
-  Button,
   Card,
   CardBody,
   CardSubtitle,

@@ -1,3 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
+
 .reap-sow-nav {
-    background-color: #ccd5ae;
+  background-color: #ccd5ae;
+}
+
+.navsign {
+  background-color: #b8ab9e;
+  background-image: url(https://images.pexels.com/photos/172289/pexels-photo-172289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-blend-mode: overlay;
+  border-radius: 5px;
+  padding: 0 1rem 0 1rem;
+  box-shadow: 5px 5px 5px #626d55;
+  transform: rotate(-3deg);
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  color: #fefae0;
 }

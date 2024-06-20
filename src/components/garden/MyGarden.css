@@ -1,0 +1,75 @@
+body {
+  background-color: #fefae0;
+}
+
+.my-garden-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.garden-btn {
+  width: fit-content;
+  height: fit-content;
+}
+
+.my-garden {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-container {
+  background-color: #e9edc9;
+  padding: 1rem 1rem 0.25rem 1rem;
+  margin: 0;
+}
+
+.h-2 {
+  color: #283618;
+}
+
+.text-block {
+  color: #283618;
+}
+
+.garden-bed-flex-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.garden-bed-container {
+  background-color: #ccd5ae;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+.garden-bed {
+  display: grid;
+  gap: 2px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.grid-square {
+  background-color: #d4a373;
+  border: 1px solid #bc6c25;
+  aspect-ratio: 1 / 1;
+}
+
+.garden-bed-info {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.checkbox-info {
+  margin-left: 10px;
+  align-self: flex-start;
+  width: 500px;
+}

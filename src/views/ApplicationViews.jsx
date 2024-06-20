@@ -3,6 +3,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import { NavBar } from "../components/nav/NavBar.jsx";
 import { PlantList } from "../components/plants/Plant.jsx";
 import { Welcome } from "../components/welcome/Welcome.jsx";
+import { MyGarden } from "../components/garden/MyGarden.jsx";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -26,6 +27,10 @@ export const ApplicationViews = () => {
         }
       >
         <Route index element={<Welcome />} />
+        <Route path="/garden">
+          <Route index element={<MyGarden currentUser={currentUser} />} />
+          <Route path="create" element={<>TO DO</>} />
+        </Route>
         <Route path="/plants" element={<PlantList />} />
       </Route>
     </Routes>

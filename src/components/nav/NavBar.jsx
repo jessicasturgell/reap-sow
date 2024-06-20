@@ -8,7 +8,6 @@ import {
   NavLink,
   Navbar,
   NavbarBrand,
-  NavbarText,
   NavbarToggler,
 } from "reactstrap";
 
@@ -20,10 +19,15 @@ export const NavBar = () => {
   return (
     <div>
       <Navbar className="reap-sow-nav">
-        <NavbarBrand href="/">reap / sow</NavbarBrand>
+        <NavbarBrand className="navsign" href="/">
+          reap / sow
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
+            <NavItem>
+              <NavLink href="/garden">My Garden</NavLink>
+            </NavItem>
             <NavItem>
               <NavLink href="/plants">Common Plants Database</NavLink>
             </NavItem>
