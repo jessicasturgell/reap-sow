@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
-  getGardenBedsByUserId,
+  getGardenBedsById,
   updateGardenBed,
 } from "../../services/gardenService.jsx";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 export const EditGardenBed = ({ currentUser }) => {
   const [gardenBed, setGardenBed] = useState({});
+  const { gardenBedId } = useParams();
 
   useEffect(() => {
-    getGardenBedsByUserId(currentUser.id).then((data) => {
-      const gardenBedObj = data[0];
-      setGardenBed(gardenBedObj);
+    getGardenBedsById(gardenBedId).then((data) => {
+      setGardenBed(data);
     });
   }, [currentUser]);
 
@@ -20,7 +20,7 @@ export const EditGardenBed = ({ currentUser }) => {
     event.preventDefault();
 
     const editedGardenBed = {
-      id: gardenBed.id,
+      id: gardenBedId,
       name: gardenBed.name,
       length: gardenBed.length,
       width: gardenBed.width,
@@ -48,7 +48,7 @@ export const EditGardenBed = ({ currentUser }) => {
             <Input
               id="name"
               name="name"
-              value={gardenBed.name ? gardenBed.name : ""}
+              value={gardenBed?.name ? gardenBed?.name : ""}
               type="text"
               onChange={(event) => {
                 const gardenBedCopy = { ...gardenBed };
@@ -65,7 +65,7 @@ export const EditGardenBed = ({ currentUser }) => {
             <Input
               id="x"
               name="x"
-              value={gardenBed.length ? gardenBed.length : 0}
+              value={gardenBed?.length ? gardenBed?.length : 0}
               type="number"
               onChange={(event) => {
                 const gardenBedCopy = { ...gardenBed };
@@ -82,7 +82,7 @@ export const EditGardenBed = ({ currentUser }) => {
             <Input
               id="y"
               name="y"
-              value={gardenBed.width ? gardenBed.width : 0}
+              value={gardenBed?.width ? gardenBed?.width : 0}
               type="number"
               onChange={(event) => {
                 const gardenBedCopy = { ...gardenBed };

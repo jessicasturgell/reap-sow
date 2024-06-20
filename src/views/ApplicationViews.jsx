@@ -32,7 +32,7 @@ export const ApplicationViews = () => {
         <Route path="/garden">
           <Route index element={<MyGarden currentUser={currentUser} />} />
           <Route path="create" element={<GardenBedForm currentUser={currentUser} />} />
-          <Route path="edit" element={<EditGardenBed currentUser={currentUser} />} />
+          <Route path="edit/:gardenBedId" element={<EditGardenBed currentUser={currentUser} />} />
         </Route>
         <Route path="/plants" element={<PlantList />} />
       </Route>

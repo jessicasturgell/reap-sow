@@ -118,7 +118,7 @@ export const MyGarden = ({ currentUser }) => {
                     color="warning"
                     onClick={() => {
                       window.open(
-                        "/garden/edit",
+                        `/garden/edit/${gardenBed.id}`,
                         "newwindow",
                         "width=600,height=400"
                       );

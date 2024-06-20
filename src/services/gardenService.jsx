@@ -4,6 +4,12 @@ export const getGardenBedsByUserId = (userId) => {
     ).then((res) => res.json());
   };
 
+export const getGardenBedsById = (gardenBedId) => {
+    return fetch(
+      `http://localhost:8088/gardenBeds/${gardenBedId}`
+    ).then((res) => res.json());
+  };
+
   export const createNewGardenBed = (gardenBed) => {
     return fetch (`http://localhost:8088/gardenBeds`, {
       method: "Post", headers: {
