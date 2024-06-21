@@ -5,13 +5,12 @@ import {
   getGardenBedsByUserId,
 } from "../../services/gardenService.jsx";
 import { getPlantsByGardenPlot } from "../../services/plantService.jsx";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+import { Button } from "reactstrap";
+import { Checklist } from "../checklist/Checklist.jsx";
 
 export const MyGarden = ({ currentUser }) => {
   const [myGardenBeds, setMyGardenBeds] = useState([]);
   const [myPlants, setMyPlants] = useState([]);
-  const navigate = useNavigate();
 
   const getAndSetGardenBeds = () => {
     if (currentUser?.id) {
@@ -91,29 +90,10 @@ export const MyGarden = ({ currentUser }) => {
                       ))}
                     </div>
                   </div>
-                  <div className="checkbox-info">
-                    <Form>
-                      <FormGroup check>
-                        <Input type="checkbox" />
-                        <Label check>Watered</Label>
-                      </FormGroup>
-                      <FormGroup check>
-                        <Input type="checkbox" />
-                        <Label check>Checked Health</Label>
-                      </FormGroup>
-                      <FormGroup check>
-                        <Input type="checkbox" />
-                        <Label check>Checked for Pests</Label>
-                      </FormGroup>
-                      <FormGroup className="mt-2">
-                        <Label className="m-0" for="exampleText">
-                          Notes
-                        </Label>
-                        <Input id="exampleText" name="text" type="textarea" />
-                      </FormGroup>
-                      <Button color="success">Save</Button>
-                    </Form>
-                  </div>
+                  <Checklist
+                    currentUser={currentUser}
+                    gardenBedId={gardenBed.id}
+                  />
                   <Button
                     color="warning"
                     onClick={() => {

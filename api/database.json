@@ -100,31 +100,14 @@
   ],
   "checklists": [
     {
-      "id": 1,
       "userId": 1,
       "gardenBedId": 1,
       "isWatered": true,
-      "isHealthy": true,
-      "hasPests": false,
-      "timestamp": "2024-06-16T10:30:00Z"
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": true,
-      "isHealthy": true,
-      "hasPests": false,
-      "timestamp": "2024-06-16T12:15:00Z"
-    },
-    {
-      "id": 3,
-      "userId": 2,
-      "gardenBedId": 2,
-      "isWatered": false,
-      "isHealthy": true,
-      "hasPests": true,
-      "timestamp": "2024-06-16T08:00:00Z"
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "Tomatoes almost ready to harvest.",
+      "timestamp": "2024-06-21T14:39:59.387Z",
+      "id": 1
     }
   ],
   "gardenPlots": [
