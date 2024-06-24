@@ -11,6 +11,7 @@ import { Checklist } from "../checklist/Checklist.jsx";
 export const MyGarden = ({ currentUser }) => {
   const [myGardenBeds, setMyGardenBeds] = useState([]);
   const [myPlants, setMyPlants] = useState([]);
+  const [clickedGardenPlot, setClickedGardenPlot] = useState([]);
 
   const getAndSetGardenBeds = () => {
     if (currentUser?.id) {
@@ -24,21 +25,22 @@ export const MyGarden = ({ currentUser }) => {
     }
   };
 
-  useEffect(() => {
-    getAndSetGardenBeds(); // Fetches garden beds
-  }, [currentUser]); // Trigger effect whenever currentUser changes
-
-  useEffect(() => {
+  const getAndSetPlants = () => {
     if (currentUser?.id) {
       getPlantsByGardenPlot(currentUser.id)
         .then((myPlantsArray) => {
           setMyPlants(myPlantsArray);
         })
         .catch((error) => {
-          console.error("Error fetching plants:", error);
+          console.error("Error fetching my plants:", error);
         });
     }
-  }, [currentUser]); // Trigger effect whenever currentUser changes
+  };
+
+  useEffect(() => {
+    getAndSetGardenBeds(); // Fetches garden beds
+    getAndSetPlants(); // Fetches plants by garden plot
+  }, [currentUser]); // Triggers effect whenever currentUser changes
 
   const handleDelete = (gardenBed) => {
     deleteGardenBed(gardenBed.id).then(() => {
@@ -48,7 +50,7 @@ export const MyGarden = ({ currentUser }) => {
 
   return (
     <>
-      {/* Populate a list of Garden Beds owned by the current user. */}
+      {/* Populates a list of Garden Beds owned by the current user. */}
       <section>
         <div className="header-container">
           <h2 className="h-2">My Garden</h2>
@@ -59,7 +61,7 @@ export const MyGarden = ({ currentUser }) => {
         <div className="my-garden-container">
           <section className="my-garden">
             {myGardenBeds.map((gardenBed) => {
-              // Filter plants for current garden bed
+              // Filters plants for current garden bed
               const plantsInThisBed = myPlants.filter(
                 (plant) => plant.gardenBedId === gardenBed.id
               );
@@ -88,6 +90,21 @@ export const MyGarden = ({ currentUser }) => {
                           {plantEntry.y} )
                         </div>
                       ))}
+                    </div>
+                    <div className="garden-plot-btn-container">
+                      <Button
+                        color="success"
+                        className="mt-2 garden-plot-btn"
+                        onClick={() => {
+                          window.open(
+                            `/garden/plant/${gardenBed.id}`,
+                            "newwindow",
+                            "width=600,height=400"
+                          );
+                        }}
+                      >
+                        Add Plant
+                      </Button>
                     </div>
                   </div>
                   <Checklist

@@ -28,8 +28,8 @@ export const EditGardenBed = ({ currentUser }) => {
     };
 
     updateGardenBed(editedGardenBed).then(() => {
-      if (window.opener) {
-        window.opener.location.reload();
+      if (window.open) {
+        window.open.location.reload();
         window.close();
       } else {
         window.alert("Parent window not found!");
