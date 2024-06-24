@@ -11,7 +11,6 @@ import { Checklist } from "../checklist/Checklist.jsx";
 export const MyGarden = ({ currentUser }) => {
   const [myGardenBeds, setMyGardenBeds] = useState([]);
   const [myPlants, setMyPlants] = useState([]);
-  const [clickedGardenPlot, setClickedGardenPlot] = useState([]);
 
   const getAndSetGardenBeds = () => {
     if (currentUser?.id) {
@@ -69,27 +68,28 @@ export const MyGarden = ({ currentUser }) => {
               return (
                 <div key={gardenBed.id} className="garden-bed-flex-container">
                   <div className="garden-bed-container">
-                    <div
-                      className="garden-bed"
-                      style={{
-                        gridTemplateColumns: `repeat(${gardenBed.length}, 1fr)`,
-                        gridTemplateRows: `repeat(${gardenBed.width}, 1fr)`,
-                      }}
-                    >
-                      {Array.from({
-                        length: gardenBed.length * gardenBed.width,
-                      }).map((_, idx) => (
-                        <div key={idx} className="grid-square"></div>
-                      ))}
-                    </div>
                     <div className="garden-bed-info">
                       <p>{gardenBed.name}</p>
-                      {plantsInThisBed.map((plantEntry) => (
-                        <div key={plantEntry.id}>
-                          {plantEntry.plant.name}: ( {plantEntry.x} ,{" "}
-                          {plantEntry.y} )
-                        </div>
-                      ))}
+                      <div className="garden-plots-container">
+                        {plantsInThisBed.map((plant) => {
+                          if (plant.newRow) {
+                            return (
+                              <>
+                                <div class="break"></div>
+                                <div className="garden-plot" key={plant.id}>
+                                  {plant.plant.name}
+                                </div>
+                              </>
+                            );
+                          } else {
+                            return (
+                              <div className="garden-plot" key={plant.id}>
+                                {plant.plant.name}
+                              </div>
+                            );
+                          }
+                        })}
+                      </div>
                     </div>
                     <div className="garden-plot-btn-container">
                       <Button

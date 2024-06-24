@@ -9,8 +9,7 @@ export const PlantNewCropForm = ({ currentUser }) => {
     userId: 0,
     plantId: 0,
     gardenBedId: 0,
-    x: 0,
-    y: 0,
+    newRow: false,
   });
   const [myPlants, setMyPlants] = useState([]);
 
@@ -24,13 +23,12 @@ export const PlantNewCropForm = ({ currentUser }) => {
 
   const handleSave = (event) => {
     event.preventDefault();
-    if (gardenPlot.plantId > 0 && gardenPlot.x > 0 && gardenPlot.y > 0) {
+    if (gardenPlot.plantId > 0) {
       const newGardenPlot = {
         userId: currentUser.id,
         plantId: parseInt(gardenPlot.plantId),
         gardenBedId: parseInt(gardenBedId),
-        x: parseInt(gardenPlot.x),
-        y: parseInt(gardenPlot.y),
+        newRow: gardenPlot.newRow,
       };
 
       console.log(newGardenPlot);
@@ -60,7 +58,6 @@ export const PlantNewCropForm = ({ currentUser }) => {
       <section className="form-container">
         <Form>
           <FormGroup row>
-            {" "}
             <Label for="plant" sm={2}>
               Plant
             </Label>
@@ -79,37 +76,18 @@ export const PlantNewCropForm = ({ currentUser }) => {
               ))}
             </Input>
           </FormGroup>
-          <FormGroup>
-            <Label for="name" sm={2}>
-              X-Axis
-            </Label>
+          <FormGroup check>
             <Input
-              type="number"
-              name="x"
-              id="x"
-              value={gardenPlot.x}
+              id="newRow"
+              type="checkbox"
+              value={gardenPlot.newRow}
               onChange={(event) => {
                 const gardenPlotCopy = { ...gardenPlot };
-                gardenPlotCopy.x = event.target.value;
+                gardenPlotCopy.newRow = event.target.checked;
                 setGardenPlot(gardenPlotCopy);
               }}
-            ></Input>
-          </FormGroup>
-          <FormGroup>
-            <Label for="name" sm={2}>
-              Y-Axis
-            </Label>
-            <Input
-              type="number"
-              name="y"
-              id="y"
-              value={gardenPlot.y}
-              onChange={(event) => {
-                const gardenPlotCopy = { ...gardenPlot };
-                gardenPlotCopy.y = event.target.value;
-                setGardenPlot(gardenPlotCopy);
-              }}
-            ></Input>
+            />
+            <Label check>New Row</Label>
           </FormGroup>
           <Button color="success" onClick={handleSave}>
             Submit

@@ -132,60 +132,53 @@
   ],
   "gardenPlots": [
     {
-      "id": 1,
       "userId": 1,
       "plantId": 1,
       "gardenBedId": 1,
-      "x": 1,
-      "y": 1
+      "newRow": false,
+      "id": 1
     },
     {
-      "id": 2,
+      "userId": 1,
+      "plantId": 1,
+      "gardenBedId": 1,
+      "newRow": false,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "plantId": 1,
+      "gardenBedId": 1,
+      "newRow": false,
+      "id": 3
+    },
+    {
       "userId": 1,
       "plantId": 2,
       "gardenBedId": 1,
-      "x": 2,
-      "y": 1
-    },
-    {
-      "id": 4,
-      "userId": 2,
-      "plantId": 3,
-      "gardenBedId": 2,
-      "x": 1,
-      "y": 1
+      "newRow": true,
+      "id": 4
     },
     {
       "userId": 1,
-      "plantId": 3,
-      "gardenBedId": 0,
-      "x": 3,
-      "y": 1,
+      "plantId": 1,
+      "gardenBedId": 1,
+      "newRow": false,
       "id": 5
     },
     {
       "userId": 1,
-      "plantId": 0,
-      "gardenBedId": "3",
-      "x": 3,
-      "y": 5,
+      "plantId": 1,
+      "gardenBedId": 1,
+      "newRow": false,
       "id": 6
     },
     {
       "userId": 1,
-      "plantId": 6,
+      "plantId": 1,
       "gardenBedId": 1,
-      "x": 3,
-      "y": 1,
+      "newRow": false,
       "id": 7
-    },
-    {
-      "userId": 1,
-      "plantId": 7,
-      "gardenBedId": 1,
-      "x": 1,
-      "y": 2,
-      "id": 8
     }
   ],
   "gardenBeds": [
@@ -202,13 +195,6 @@
       "userId": 2,
       "length": 5,
       "width": 2
-    },
-    {
-      "userId": 1,
-      "name": "Test",
-      "length": 3,
-      "width": 6,
-      "id": 3
     }
   ]
 }
