@@ -108,6 +108,26 @@
       "notes": "Tomatoes almost ready to harvest.",
       "timestamp": "2024-06-21T14:39:59.387Z",
       "id": 1
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "",
+      "timestamp": "2024-06-24T15:20:54.819Z",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "I did a note",
+      "timestamp": "2024-06-24T15:21:05.186Z",
+      "id": 3
     }
   ],
   "gardenPlots": [
@@ -134,6 +154,38 @@
       "gardenBedId": 2,
       "x": 1,
       "y": 1
+    },
+    {
+      "userId": 1,
+      "plantId": 3,
+      "gardenBedId": 0,
+      "x": 3,
+      "y": 1,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "plantId": 0,
+      "gardenBedId": "3",
+      "x": 3,
+      "y": 5,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "plantId": 6,
+      "gardenBedId": 1,
+      "x": 3,
+      "y": 1,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "plantId": 7,
+      "gardenBedId": 1,
+      "x": 1,
+      "y": 2,
+      "id": 8
     }
   ],
   "gardenBeds": [
@@ -150,6 +202,13 @@
       "userId": 2,
       "length": 5,
       "width": 2
+    },
+    {
+      "userId": 1,
+      "name": "Test",
+      "length": 3,
+      "width": 6,
+      "id": 3
     }
   ]
 }

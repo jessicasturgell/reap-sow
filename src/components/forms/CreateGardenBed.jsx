@@ -1,12 +1,10 @@
 import { useState } from "react";
 import "./Form.css";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
-import { useNavigate } from "react-router-dom";
 import { createNewGardenBed } from "../../services/gardenService.jsx";
 
 export const GardenBedForm = ({ currentUser }) => {
   const [gardenBed, setGardenBed] = useState({ name: "", length: 0, width: 0 });
-  const navigate = useNavigate();
 
   const handleSave = (event) => {
     event.preventDefault();
