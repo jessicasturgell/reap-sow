@@ -56,18 +56,10 @@ body {
 .garden-plots-container {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid #ccc;
 }
 
 .garden-plot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #d4a373;
-  border: 1px solid #bc6c25;
-  width: 100px;
-  height: 100px;
-  margin: 2px;
+  width: 100%;
 }
 
 .break {
@@ -77,4 +69,44 @@ body {
 
 .garden-plot-btn-container {
   display: flex;
+}
+
+.plot-change-container {
+  background-color: #d4a373;
+  border: 1px solid #bc6c25;
+  width: 100px;
+  margin: 2px;
+  aspect-ratio: 1/1;
+}
+
+.plot-change-btns {
+  font-size: 12px;
+  float: right;
+  margin: 1px 4px 10px 0;
+  color: #915724;
+}
+
+.icon {
+  width: 50px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ccd5ae;
+  text-align: center;
+  font-size: 12px;
+  padding: 1rem;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer > div > a {
+  text-decoration: none;
+  color: #283618;
 }

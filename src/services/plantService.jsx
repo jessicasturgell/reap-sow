@@ -17,3 +17,9 @@ export const plantNewCrop = (gardenBed) => {
     body: JSON.stringify(gardenBed),
   });
 };
+
+export const deleteCrop = (gardenPlotId) => {
+  return fetch(`http://localhost:8088/gardenPlots/${gardenPlotId}`, {
+    method: "DELETE",
+  });
+};
