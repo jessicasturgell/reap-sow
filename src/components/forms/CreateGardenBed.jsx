@@ -4,16 +4,14 @@ import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { createNewGardenBed } from "../../services/gardenService.jsx";
 
 export const GardenBedForm = ({ currentUser }) => {
-  const [gardenBed, setGardenBed] = useState({ name: "", length: 0, width: 0 });
+  const [gardenBed, setGardenBed] = useState({ name: "" });
 
   const handleSave = (event) => {
     event.preventDefault();
-    if (gardenBed.name && gardenBed.length > 0 && gardenBed.width > 0) {
+    if (gardenBed.name.length > 0) {
       const newGardenBed = {
         userId: currentUser.id,
         name: gardenBed.name,
-        length: gardenBed.length,
-        width: gardenBed.width,
       };
 
       createNewGardenBed(newGardenBed).then(() => {
@@ -25,7 +23,7 @@ export const GardenBedForm = ({ currentUser }) => {
         }
       });
     } else {
-      window.alert("Please fill out all fields!");
+      window.alert("Please input a name!");
     }
   };
   return (
@@ -44,38 +42,6 @@ export const GardenBedForm = ({ currentUser }) => {
               onChange={(event) => {
                 const gardenBedCopy = { ...gardenBed };
                 gardenBedCopy.name = event.target.value;
-                setGardenBed(gardenBedCopy);
-              }}
-            />
-          </FormGroup>
-          <FormGroup row>
-            <Label for="x" sm={2}>
-              Length
-            </Label>
-            <Input
-              id="x"
-              name="x"
-              placeholder="Enter the length (x-axis) of your garden bed here"
-              type="number"
-              onChange={(event) => {
-                const gardenBedCopy = { ...gardenBed };
-                gardenBedCopy.length = parseInt(event.target.value);
-                setGardenBed(gardenBedCopy);
-              }}
-            />
-          </FormGroup>
-          <FormGroup row>
-            <Label for="y" sm={2}>
-              Width
-            </Label>
-            <Input
-              id="y"
-              name="y"
-              placeholder="Enter the width (y-axis) of your garden bed here"
-              type="number"
-              onChange={(event) => {
-                const gardenBedCopy = { ...gardenBed };
-                gardenBedCopy.width = parseInt(event.target.value);
                 setGardenBed(gardenBedCopy);
               }}
             />

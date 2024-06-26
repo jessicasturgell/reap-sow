@@ -4,14 +4,11 @@ import {
   deleteGardenBed,
   getGardenBedsByUserId,
 } from "../../services/gardenService.jsx";
-import { getPlantsByGardenPlot } from "../../services/plantService.jsx";
 import { Button } from "reactstrap";
-import { Checklist } from "../checklist/Checklist.jsx";
+import { MyGardenBed } from "./MyGardenBed.jsx";
 
 export const MyGarden = ({ currentUser }) => {
   const [myGardenBeds, setMyGardenBeds] = useState([]);
-  const [myPlants, setMyPlants] = useState([]);
-  const [clickedGardenPlot, setClickedGardenPlot] = useState([]);
 
   const getAndSetGardenBeds = () => {
     if (currentUser?.id) {
@@ -25,32 +22,18 @@ export const MyGarden = ({ currentUser }) => {
     }
   };
 
-  const getAndSetPlants = () => {
-    if (currentUser?.id) {
-      getPlantsByGardenPlot(currentUser.id)
-        .then((myPlantsArray) => {
-          setMyPlants(myPlantsArray);
-        })
-        .catch((error) => {
-          console.error("Error fetching my plants:", error);
-        });
-    }
-  };
-
-  useEffect(() => {
-    getAndSetGardenBeds(); // Fetches garden beds
-    getAndSetPlants(); // Fetches plants by garden plot
-  }, [currentUser]); // Triggers effect whenever currentUser changes
-
-  const handleDelete = (gardenBed) => {
-    deleteGardenBed(gardenBed.id).then(() => {
+  const handleDelete = (gardenBedId) => {
+    deleteGardenBed(gardenBedId).then(() => {
       getAndSetGardenBeds();
     });
   };
 
+  useEffect(() => {
+    getAndSetGardenBeds();
+  }, [currentUser]);
+
   return (
     <>
-      {/* Populates a list of Garden Beds owned by the current user. */}
       <section>
         <div className="header-container">
           <h2 className="h-2">My Garden</h2>
@@ -61,76 +44,13 @@ export const MyGarden = ({ currentUser }) => {
         <div className="my-garden-container">
           <section className="my-garden">
             {myGardenBeds.map((gardenBed) => {
-              // Filters plants for current garden bed
-              const plantsInThisBed = myPlants.filter(
-                (plant) => plant.gardenBedId === gardenBed.id
-              );
-
               return (
-                <div key={gardenBed.id} className="garden-bed-flex-container">
-                  <div className="garden-bed-container">
-                    <div
-                      className="garden-bed"
-                      style={{
-                        gridTemplateColumns: `repeat(${gardenBed.length}, 1fr)`,
-                        gridTemplateRows: `repeat(${gardenBed.width}, 1fr)`,
-                      }}
-                    >
-                      {Array.from({
-                        length: gardenBed.length * gardenBed.width,
-                      }).map((_, idx) => (
-                        <div key={idx} className="grid-square"></div>
-                      ))}
-                    </div>
-                    <div className="garden-bed-info">
-                      <p>{gardenBed.name}</p>
-                      {plantsInThisBed.map((plantEntry) => (
-                        <div key={plantEntry.id}>
-                          {plantEntry.plant.name}: ( {plantEntry.x} ,{" "}
-                          {plantEntry.y} )
-                        </div>
-                      ))}
-                    </div>
-                    <div className="garden-plot-btn-container">
-                      <Button
-                        color="success"
-                        className="mt-2 garden-plot-btn"
-                        onClick={() => {
-                          window.open(
-                            `/garden/plant/${gardenBed.id}`,
-                            "newwindow",
-                            "width=600,height=400"
-                          );
-                        }}
-                      >
-                        Add Plant
-                      </Button>
-                    </div>
-                  </div>
-                  <Checklist
-                    currentUser={currentUser}
-                    gardenBedId={gardenBed.id}
-                  />
-                  <Button
-                    color="warning"
-                    onClick={() => {
-                      window.open(
-                        `/garden/edit/${gardenBed.id}`,
-                        "newwindow",
-                        "width=600,height=400"
-                      );
-                    }}
-                  >
-                    Edit Bed
-                  </Button>
-                  <Button
-                    className="ms-1"
-                    color="danger"
-                    onClick={() => handleDelete(gardenBed)}
-                  >
-                    Delete Bed
-                  </Button>
-                </div>
+                <MyGardenBed
+                  key={gardenBed.id}
+                  currentUser={currentUser}
+                  gardenBed={gardenBed}
+                  onDelete={handleDelete}
+                />
               );
             })}
           </section>
@@ -147,6 +67,37 @@ export const MyGarden = ({ currentUser }) => {
           >
             Create New Garden Bed
           </Button>
+        </div>
+      </section>
+      <section className="footer">
+        <div className="footer-flex">
+          <a href="https://www.flaticon.com/free-icons/corn" title="corn icons">
+            Corn icons created by Freepik - Flaticon
+          </a>
+          <a
+            href="https://www.flaticon.com/free-icons/onion"
+            title="onion icons"
+          >
+            Onion icons created by Freepik - Flaticon
+          </a>
+          <a
+            href="https://www.flaticon.com/free-icons/vegetable"
+            title="vegetable icons"
+          >
+            Vegetable icons created by SA Family - Flaticon
+          </a>
+          <a
+            href="https://www.flaticon.com/free-icons/food-and-restaurant"
+            title="food and restaurant icons"
+          >
+            Food and restaurant icons created by SA Family - Flaticon
+          </a>
+          <a
+            href="https://www.flaticon.com/free-icons/fruit"
+            title="fruit icons"
+          >
+            Fruit icons created by SA Family - Flaticon
+          </a>
         </div>
       </section>
     </>

@@ -1,56 +1,50 @@
 import { useEffect, useState } from "react";
-import "./Form.css";
-import { Form, Button, FormGroup, Input, Label } from "reactstrap";
-import { getAllPlants, plantNewCrop } from "../../services/plantService.jsx";
 import { useParams } from "react-router-dom";
+import { updateGardenBed } from "../../services/gardenService.jsx";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import {
+  editPlantedCrop,
+  getPlantsByGardenPlot,
+  getAllPlants,
+  getGardenPlotById,
+} from "../../services/plantService.jsx";
 
-export const PlantNewCropForm = ({ currentUser }) => {
-  const [gardenPlot, setGardenPlot] = useState({
-    userId: 0,
-    plantId: 0,
-    gardenBedId: 0,
-    newRow: false,
-  });
+export const EditPlantedCrop = ({ currentUser, plants }) => {
+  const [gardenPlot, setGardenPlot] = useState({});
   const [myPlants, setMyPlants] = useState([]);
-
-  let { gardenBedId } = useParams();
+  const { gardenPlotId } = useParams();
 
   useEffect(() => {
     getAllPlants()
       .then((data) => setMyPlants(data))
       .catch((error) => console.error("Error fetching plants:", error));
-  }, []);
+  }, [currentUser]);
+
+  useEffect(() => {
+    getGardenPlotById(gardenPlotId).then((data) => {
+      setGardenPlot(data[0]);
+    });
+  }, [currentUser]);
 
   const handleSave = (event) => {
     event.preventDefault();
-    if (gardenPlot.plantId > 0) {
-      const newGardenPlot = {
-        userId: currentUser.id,
-        plantId: parseInt(gardenPlot.plantId),
-        gardenBedId: parseInt(gardenBedId),
-        newRow: gardenPlot.newRow,
-      };
 
-      console.log(newGardenPlot);
-      plantNewCrop(newGardenPlot).then(() => {
-        if (window.opener) {
-          window.opener.location.reload();
-          window.close();
-        } else {
-          window.alert("Parent window not found!");
-        }
-      });
-    } else {
-      window.alert("Please fill out all fields!");
-    }
-  };
+    const editedGardenPlot = {
+      userId: gardenPlot.userId,
+      plantId: gardenPlot.plantId,
+      gardenBedId: gardenPlot.gardenBedId,
+      id: gardenPlotId,
+      newRow: gardenPlot.newRow,
+    };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setGardenPlot((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    editPlantedCrop(editedGardenPlot).then(() => {
+      if (window.opener) {
+        window.opener.location.reload();
+        window.close();
+      } else {
+        window.alert("Parent window not found!");
+      }
+    });
   };
 
   return (
@@ -66,7 +60,11 @@ export const PlantNewCropForm = ({ currentUser }) => {
               name="plantId"
               id="plant"
               value={gardenPlot.plantId}
-              onChange={handleInputChange}
+              onChange={(event) => {
+                const gardenPlotCopy = { ...gardenPlot };
+                gardenPlotCopy.plantId = event.target.value;
+                setGardenPlot(gardenPlotCopy);
+              }}
             >
               <option value="">Select a plant</option>
               {myPlants.map((plant) => (
