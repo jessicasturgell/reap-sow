@@ -22,14 +22,12 @@ export const EditGardenBed = ({ currentUser }) => {
     const editedGardenBed = {
       id: gardenBedId,
       name: gardenBed.name,
-      length: gardenBed.length,
-      width: gardenBed.width,
       userId: gardenBed.userId,
     };
 
     updateGardenBed(editedGardenBed).then(() => {
-      if (window.open) {
-        window.open.location.reload();
+      if (window.opener) {
+        window.opener.location.reload();
         window.close();
       } else {
         window.alert("Parent window not found!");
@@ -53,40 +51,6 @@ export const EditGardenBed = ({ currentUser }) => {
               onChange={(event) => {
                 const gardenBedCopy = { ...gardenBed };
                 gardenBedCopy.name = event.target.value;
-                setGardenBed(gardenBedCopy);
-              }}
-              required
-            />
-          </FormGroup>
-          <FormGroup row>
-            <Label for="x" sm={2}>
-              Length
-            </Label>
-            <Input
-              id="x"
-              name="x"
-              value={gardenBed?.length ? gardenBed?.length : 0}
-              type="number"
-              onChange={(event) => {
-                const gardenBedCopy = { ...gardenBed };
-                gardenBedCopy.length = parseInt(event.target.value);
-                setGardenBed(gardenBedCopy);
-              }}
-              required
-            />
-          </FormGroup>
-          <FormGroup row>
-            <Label for="y" sm={2}>
-              Width
-            </Label>
-            <Input
-              id="y"
-              name="y"
-              value={gardenBed?.width ? gardenBed?.width : 0}
-              type="number"
-              onChange={(event) => {
-                const gardenBedCopy = { ...gardenBed };
-                gardenBedCopy.width = parseInt(event.target.value);
                 setGardenBed(gardenBedCopy);
               }}
               required

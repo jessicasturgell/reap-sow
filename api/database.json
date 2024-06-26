@@ -194,16 +194,17 @@
     {
       "id": 1,
       "name": "My Garden",
-      "userId": 1,
-      "length": 4,
-      "width": 3
+      "userId": 1
     },
     {
       "id": 2,
       "name": "My Garden",
-      "userId": 2,
-      "length": 5,
-      "width": 2
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "name": "Wow",
+      "userId": 1
     }
   ]
 }
