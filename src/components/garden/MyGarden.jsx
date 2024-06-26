@@ -4,19 +4,11 @@ import {
   deleteGardenBed,
   getGardenBedsByUserId,
 } from "../../services/gardenService.jsx";
-import {
-  deleteCrop,
-  getPlantsByGardenPlot,
-} from "../../services/plantService.jsx";
 import { Button } from "reactstrap";
-import { Checklist } from "../checklist/Checklist.jsx";
-import { MyGardenPlant } from "./MyGardenPlant.jsx";
 import { MyGardenBed } from "./MyGardenBed.jsx";
 
 export const MyGarden = ({ currentUser }) => {
   const [myGardenBeds, setMyGardenBeds] = useState([]);
-  const [myPlants, setMyPlants] = useState([]);
-  const [gardenPlot, setMyGardenPlots] = useState([]);
 
   const getAndSetGardenBeds = () => {
     if (currentUser?.id) {
@@ -30,26 +22,18 @@ export const MyGarden = ({ currentUser }) => {
     }
   };
 
-  // const getAndSetPlants = () => {
-  //   if (currentUser?.id) {
-  //     getPlantsByGardenPlot(currentUser.id)
-  //       .then((myPlantsArray) => {
-  //         setMyPlants(myPlantsArray);
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error fetching my plants:", error);
-  //       });
-  //   }
-  // };
+  const handleDelete = (gardenBedId) => {
+    deleteGardenBed(gardenBedId).then(() => {
+      getAndSetGardenBeds();
+    });
+  };
 
   useEffect(() => {
-    getAndSetGardenBeds(); // Fetches garden beds
-    // getAndSetPlants(); // Fetches plants by garden plot
-  }, [currentUser]); // Triggers effect whenever currentUser changes
+    getAndSetGardenBeds();
+  }, [currentUser]);
 
   return (
     <>
-      {/* Populates a list of Garden Beds owned by the current user. */}
       <section>
         <div className="header-container">
           <h2 className="h-2">My Garden</h2>
@@ -61,7 +45,12 @@ export const MyGarden = ({ currentUser }) => {
           <section className="my-garden">
             {myGardenBeds.map((gardenBed) => {
               return (
-                <MyGardenBed key={gardenBed.id} currentUser={currentUser} gardenBed={gardenBed} />
+                <MyGardenBed
+                  key={gardenBed.id}
+                  currentUser={currentUser}
+                  gardenBed={gardenBed}
+                  onDelete={handleDelete}
+                />
               );
             })}
           </section>
