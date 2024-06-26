@@ -7,6 +7,7 @@ import { MyGarden } from "../components/garden/MyGarden.jsx";
 import { GardenBedForm } from "../components/forms/CreateGardenBed.jsx";
 import { PlantNewCropForm } from "../components/forms/PlantNewCrop.jsx";
 import { EditGardenBed } from "../components/forms/EditGardenBed.jsx";
+import { EditPlantedCrop } from "../components/forms/EditPlantedCrop.jsx";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -39,6 +40,10 @@ export const ApplicationViews = () => {
           <Route
             path="plant/:gardenBedId"
             element={<PlantNewCropForm currentUser={currentUser} />}
+          />
+          <Route
+            path="plant/edit/:gardenPlotId"
+            element={<EditPlantedCrop currentUser={currentUser} />}
           />
           <Route
             path="edit/:gardenBedId"

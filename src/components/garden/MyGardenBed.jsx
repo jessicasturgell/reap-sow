@@ -10,7 +10,7 @@ import { getPlantsByGardenPlot } from "../../services/plantService.jsx";
 import { useEffect, useState } from "react";
 
 export const MyGardenBed = ({ currentUser, gardenBed }) => {
-  //   const [myGardenBeds, setMyGardenBeds] = useState([]);
+  const [myGardenBeds, setMyGardenBeds] = useState([]);
   const [myPlants, setMyPlants] = useState([]);
   const handleDelete = (gardenBed) => {
     deleteGardenBed(gardenBed.id).then(() => {

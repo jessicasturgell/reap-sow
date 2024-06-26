@@ -156,32 +156,38 @@
       "id": 2
     },
     {
+      "plantId": "3",
+      "id": 5
+    },
+    {
+      "plantId": "2",
+      "id": 6
+    },
+    {
+      "plantId": "1",
+      "id": 7,
+      "newRow": true
+    },
+    {
       "userId": 1,
       "plantId": 1,
       "gardenBedId": 1,
       "newRow": false,
-      "id": 3
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "plantId": 1,
+      "gardenBedId": 1,
+      "newRow": false,
+      "id": 9
     },
     {
       "userId": 1,
       "plantId": 2,
       "gardenBedId": 1,
       "newRow": true,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "plantId": 2,
-      "gardenBedId": 1,
-      "newRow": false,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "plantId": 2,
-      "gardenBedId": 1,
-      "newRow": false,
-      "id": 6
+      "id": 10
     }
   ],
   "gardenBeds": [

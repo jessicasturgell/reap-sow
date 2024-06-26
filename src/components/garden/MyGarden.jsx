@@ -61,7 +61,7 @@ export const MyGarden = ({ currentUser }) => {
           <section className="my-garden">
             {myGardenBeds.map((gardenBed) => {
               return (
-                <MyGardenBed currentUser={currentUser} gardenBed={gardenBed} />
+                <MyGardenBed key={gardenBed.id} currentUser={currentUser} gardenBed={gardenBed} />
               );
             })}
           </section>

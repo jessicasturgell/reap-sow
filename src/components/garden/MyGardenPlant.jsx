@@ -12,11 +12,21 @@ export const MyGardenPlant = ({ plant, getAndSetPlants }) => {
     <>
       {plant.newRow ? (
         <>
-          <div class="break"></div>
+          <div className="break"></div>
           <div className="plot-change-container">
             <aside className="plot-change-btns">
-              <span>edit</span> |{" "}
-              <span onClick={() => handleDeleteCrop(plant)}>delete</span>
+              <span
+                onClick={() => {
+                  window.open(
+                    `/garden/plant/edit/${plant.id}`,
+                    "newwindow",
+                    "width=600,height=400"
+                  );
+                }}
+              >
+                edit
+              </span>{" "}
+              | <span onClick={() => handleDeleteCrop(plant)}>delete</span>
             </aside>
             <div className="garden-plot" key={plant.id}>
               <img
@@ -31,8 +41,18 @@ export const MyGardenPlant = ({ plant, getAndSetPlants }) => {
         <>
           <div className="plot-change-container">
             <aside className="plot-change-btns">
-              <span>edit</span> |{" "}
-              <span onClick={() => handleDeleteCrop(plant)}>delete</span>
+              <span
+                onClick={() => {
+                  window.open(
+                    `/garden/plant/edit/${plant.id}`,
+                    "newwindow",
+                    "width=600,height=400"
+                  );
+                }}
+              >
+                edit
+              </span>{" "}
+              | <span onClick={() => handleDeleteCrop(plant)}>delete</span>
             </aside>
             <div className="garden-plot" key={plant.id}>
               <img
