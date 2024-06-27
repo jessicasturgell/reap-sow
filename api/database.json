@@ -118,26 +118,6 @@
       "notes": "Tomatoes almost ready to harvest.",
       "timestamp": "2024-06-21T14:39:59.387Z",
       "id": 1
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": true,
-      "checkedHealth": true,
-      "checkedPests": true,
-      "notes": "",
-      "timestamp": "2024-06-24T15:20:54.819Z",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": true,
-      "checkedHealth": true,
-      "checkedPests": true,
-      "notes": "I did a note",
-      "timestamp": "2024-06-24T15:21:05.186Z",
-      "id": 3
     }
   ],
   "gardenPlots": [

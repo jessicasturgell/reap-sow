@@ -87,7 +87,7 @@ export const EditPlantedCrop = ({ currentUser, plants }) => {
             />
             <Label check>New Row</Label>
           </FormGroup>
-          <Button color="success" onClick={handleSave}>
+          <Button color="success" className="mt-2" onClick={handleSave}>
             Submit
           </Button>
         </Form>

@@ -7,3 +7,13 @@ export const addNewChecklistData = (checklist) => {
     body: JSON.stringify(checklist),
   });
 };
+
+export const getAllChecklists = () => {
+  return fetch("http://localhost:8088/checklists").then((res) => res.json());
+};
+
+export const deleteChecklist = (checklistId) => {
+  return fetch(`http://localhost:8088/checklists/${checklistId}`, {
+    method: "DELETE",
+  });
+};
