@@ -8,3 +8,25 @@
 .banners {
   text-shadow: 1px 1px 5px black;
 }
+
+.welcome-content-container {
+  margin: 1rem;
+}
+
+.card-edit {
+  background-color: #e9edc9;
+  margin-bottom: 1rem;
+}
+
+.welcome-h1 {
+  color: #283618;
+  text-align: center;
+}
+
+.welcome-h2 {
+  text-align: center;
+}
+
+.welcome-text-container {
+  margin: 1rem 8rem 2rem 8rem;
+}
