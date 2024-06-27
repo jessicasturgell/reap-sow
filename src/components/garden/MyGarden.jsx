@@ -34,7 +34,7 @@ export const MyGarden = ({ currentUser }) => {
 
   return (
     <>
-      <section>
+      <section className="garden-section">
         <div className="header-container">
           <h2 className="h-2">My Garden</h2>
           <p className="text-block">

@@ -118,6 +118,16 @@
       "notes": "Tomatoes almost ready to harvest.",
       "timestamp": "2024-06-21T14:39:59.387Z",
       "id": 1
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 3,
+      "isWatered": true,
+      "checkedHealth": false,
+      "checkedPests": false,
+      "notes": "Strawbs strawbing.",
+      "timestamp": "2024-06-27T16:11:01.110Z",
+      "id": 2
     }
   ],
   "gardenPlots": [
@@ -162,6 +172,48 @@
       "gardenBedId": 1,
       "newRow": false,
       "id": 6
+    },
+    {
+      "userId": 1,
+      "plantId": 4,
+      "gardenBedId": 3,
+      "newRow": false,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "plantId": 4,
+      "gardenBedId": 3,
+      "newRow": false,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "plantId": 4,
+      "gardenBedId": 3,
+      "newRow": true,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "plantId": 4,
+      "gardenBedId": 3,
+      "newRow": false,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "plantId": 4,
+      "gardenBedId": 3,
+      "newRow": true,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "plantId": 4,
+      "gardenBedId": 3,
+      "newRow": false,
+      "id": 12
     }
   ],
   "gardenBeds": [
@@ -174,6 +226,11 @@
       "id": 2,
       "name": "My Garden",
       "userId": 2
+    },
+    {
+      "userId": 1,
+      "name": "Berry Bed",
+      "id": 3
     }
   ]
 }
