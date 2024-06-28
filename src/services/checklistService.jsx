@@ -9,7 +9,7 @@ export const addNewChecklistData = (checklist) => {
 };
 
 export const getChecklistsByUserId = (userId) => {
-  return fetch(`http://localhost:8088/checklists?${userId}`).then((res) =>
+  return fetch(`http://localhost:8088/checklists?userId=${userId}`).then((res) =>
     res.json()
   );
 };

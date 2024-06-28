@@ -245,18 +245,14 @@
   ],
   "harvests": [
     {
-      "id": 1,
-      "timestamp": "2024-06-21T14:39:59.387Z",
       "userId": 1,
-      "plantId": 1,
-      "yield": 4
-    },
-    {
-      "id": 2,
-      "timestamp": "2024-06-21T14:39:59.387Z",
-      "userId": 2,
-      "plantId": 1,
-      "yield": 4
+      "name": "Eggplant",
+      "datePlanted": "2024-06-06",
+      "dateHarvested": "2024-06-28",
+      "weight": "50",
+      "notes": "Eggcellent",
+      "img": "https://assets.bonappetit.com/photos/5f46963e5c43e3c9e13b2f1c/master/w_1600%2Cc_limit/20200814-HLY-FMC-Part-25810.jpg",
+      "id": 4
     }
   ]
 }

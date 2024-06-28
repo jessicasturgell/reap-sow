@@ -9,7 +9,8 @@ import { PlantNewCropForm } from "../components/forms/PlantNewCrop.jsx";
 import { EditGardenBed } from "../components/forms/EditGardenBed.jsx";
 import { EditPlantedCrop } from "../components/forms/EditPlantedCrop.jsx";
 import { CareHistory } from "../components/history/CareHistory.jsx";
-import { HarvestRreport } from "../components/harvest/HarvestReport.jsx";
+import { HarvestReport } from "../components/harvest/HarvestReport.jsx";
+import { CreateNewHarvestForm } from "../components/forms/CreateNewHarvestForm.jsx";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -56,8 +57,17 @@ export const ApplicationViews = () => {
           path="plants"
           element={<PlantList currentUser={currentUser} />}
         />
-        <Route path="history" element={<CareHistory currentUser={currentUser} />} />
-        <Route path="harvest" element={<HarvestRreport currentUser={currentUser} />} />
+        <Route
+          path="history"
+          element={<CareHistory currentUser={currentUser} />}
+        />
+        <Route path="harvest">
+          <Route index element={<HarvestReport currentUser={currentUser} />} />
+          <Route
+            path="create"
+            element={<CreateNewHarvestForm currentUser={currentUser} />}
+          ></Route>
+        </Route>
       </Route>
     </Routes>
   );

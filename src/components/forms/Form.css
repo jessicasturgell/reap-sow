@@ -1,3 +1,9 @@
 .form-container {
     margin: 1rem 2rem;
 }
+
+.harvest-form {
+    background-color: #ffffff;
+    border: 1px solid #ccd5ae;
+    margin: 3rem;
+}
