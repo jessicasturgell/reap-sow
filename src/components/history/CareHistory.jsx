@@ -2,7 +2,7 @@ import "./CareHistory.css";
 import React, { useEffect, useState } from "react";
 import {
   deleteChecklist,
-  getAllChecklists,
+  getChecklistsByUserId,
 } from "../../services/checklistService.jsx";
 import { Button, ListGroup, ListGroupItem } from "reactstrap";
 import { getAllGardenBeds } from "../../services/gardenService.jsx";
@@ -11,18 +11,35 @@ import { CareHistoryFilterBar } from "./CareHistoryFilterBar.jsx";
 export const CareHistory = ({ currentUser }) => {
   const [allChecklists, setAllChecklists] = useState([]);
   const [gardenBeds, setGardenBeds] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
   const [filteredChecklists, setFilteredChecklist] = useState([]);
 
-  useEffect(() => {
-    getAllChecklists().then((checklistArray) => {
-      setAllChecklists(checklistArray);
-    });
+  const getAndSetCareHistory = () => {
+    if (currentUser?.id) {
+      getChecklistsByUserId(currentUser.id)
+        .then((checklistArray) => {
+          setAllChecklists(checklistArray);
+        })
+        .catch((error) => {
+          console.error("Error fetching care history:", error);
+        });
+    }
+  };
 
-    getAllGardenBeds().then((gardenBedArray) => {
-      setGardenBeds(gardenBedArray);
-    });
-  }, []);
+  const getAndSetGardenBeds = () => {
+    getAllGardenBeds()
+      .then((gardenBedsArray) => {
+        setGardenBeds(gardenBedsArray);
+      })
+      .catch((error) => {
+        console.error("Error fetching garden beds:", error);
+      });
+  };
+
+  useEffect(() => {
+    getAndSetCareHistory();
+    getAndSetGardenBeds();
+  }, [currentUser]);
 
   useEffect(() => {
     const foundChecklist = allChecklists.filter((checklist) =>
@@ -37,11 +54,16 @@ export const CareHistory = ({ currentUser }) => {
   };
 
   const handleDelete = (checklist) => {
-    deleteChecklist(checklist.id).then(() => {
-      getAllChecklists().then((checklistArray) => {
+    deleteChecklist(checklist.id)
+      .then(() => {
+        return getChecklistsByUserId(currentUser.id);
+      })
+      .then((checklistArray) => {
         setAllChecklists(checklistArray);
+      })
+      .catch((error) => {
+        console.error("Error deleting checklist:", error);
       });
-    });
   };
 
   return (
@@ -55,43 +77,45 @@ export const CareHistory = ({ currentUser }) => {
           setSearchTerm={setSearchTerm}
           currentUser={currentUser}
         />
-        {filteredChecklists.map((checklist) => (
-          <ListGroup className="m-3" key={checklist.id}>
-            <ListGroupItem color="success">
-              {" "}
-              {new Date(checklist.timestamp).toISOString().split("T")[0]}
-            </ListGroupItem>
-            <ListGroupItem color="info">
-              {findGardenBedName(checklist.gardenBedId)}
-            </ListGroupItem>
-            <ListGroupItem color="warning">
-              {" "}
-              {checklist.isWatered ? "Watered!" : "Did not water :("}
-            </ListGroupItem>
-            <ListGroupItem color="warning">
-              {checklist.checkedHealth
-                ? "Checked health!"
-                : "Did not check health :("}
-            </ListGroupItem>
-            <ListGroupItem color="warning">
-              {checklist.checkedPests
-                ? "Checked for pests!"
-                : "Did not check for pests :("}
-            </ListGroupItem>
-            <ListGroupItem color="danger">
-              {checklist.notes !== "" ? checklist.notes : "No notes!"}
-            </ListGroupItem>
-            <ListGroupItem color="success" className="care-btn-container">
-              <Button
-                className="m-1"
-                color="danger"
-                onClick={() => handleDelete(checklist)}
-              >
-                Delete Data
-              </Button>
-            </ListGroupItem>
-          </ListGroup>
-        ))}
+        {filteredChecklists.length > 0 ? (
+          filteredChecklists.map((checklist) => (
+            <ListGroup className="m-3" key={checklist.id}>
+              <ListGroupItem color="success">
+                {new Date(checklist.timestamp).toISOString().split("T")[0]}
+              </ListGroupItem>
+              <ListGroupItem color="info">
+                {findGardenBedName(checklist.gardenBedId)}
+              </ListGroupItem>
+              <ListGroupItem color="warning">
+                {checklist.isWatered ? "Watered!" : "Did not water :("}
+              </ListGroupItem>
+              <ListGroupItem color="warning">
+                {checklist.checkedHealth
+                  ? "Checked health!"
+                  : "Did not check health :("}
+              </ListGroupItem>
+              <ListGroupItem color="warning">
+                {checklist.checkedPests
+                  ? "Checked for pests!"
+                  : "Did not check for pests :("}
+              </ListGroupItem>
+              <ListGroupItem color="danger">
+                {checklist.notes !== "" ? checklist.notes : "No notes!"}
+              </ListGroupItem>
+              <ListGroupItem color="success" className="care-btn-container">
+                <Button
+                  className="m-1"
+                  color="danger"
+                  onClick={() => handleDelete(checklist)}
+                >
+                  Delete Data
+                </Button>
+              </ListGroupItem>
+            </ListGroup>
+          ))
+        ) : (
+          <p>No care history found.</p>
+        )}
       </section>
     </section>
   );

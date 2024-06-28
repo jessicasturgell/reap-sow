@@ -8,8 +8,10 @@ export const addNewChecklistData = (checklist) => {
   });
 };
 
-export const getAllChecklists = () => {
-  return fetch("http://localhost:8088/checklists").then((res) => res.json());
+export const getChecklistsByUserId = (userId) => {
+  return fetch(`http://localhost:8088/checklists?${userId}`).then((res) =>
+    res.json()
+  );
 };
 
 export const deleteChecklist = (checklistId) => {

@@ -128,6 +128,16 @@
       "notes": "Strawbs strawbing.",
       "timestamp": "2024-06-27T16:11:01.110Z",
       "id": 2
+    },
+    {
+      "userId": 2,
+      "gardenBedId": 3,
+      "isWatered": true,
+      "checkedHealth": false,
+      "checkedPests": false,
+      "notes": "Strawbs strawbing.",
+      "timestamp": "2024-06-27T16:11:01.110Z",
+      "id": 3
     }
   ],
   "gardenPlots": [
@@ -231,6 +241,22 @@
       "userId": 1,
       "name": "Berry Bed",
       "id": 3
+    }
+  ],
+  "harvests": [
+    {
+      "id": 1,
+      "timestamp": "2024-06-21T14:39:59.387Z",
+      "userId": 1,
+      "plantId": 1,
+      "yield": 4
+    },
+    {
+      "id": 2,
+      "timestamp": "2024-06-21T14:39:59.387Z",
+      "userId": 2,
+      "plantId": 1,
+      "yield": 4
     }
   ]
 }
