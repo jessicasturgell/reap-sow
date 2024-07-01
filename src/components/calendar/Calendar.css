@@ -1,0 +1,27 @@
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  background-color: white;
+  margin: 2rem;
+  border: 1px solid #ccd5ae;
+  border-radius: 5px;
+}
+
+.header-container {
+  background-color: #e9edc9;
+  padding: 1rem 1rem 0.25rem 1rem;
+  margin: 0;
+}
+
+.h-2 {
+  color: #283618;
+}
+
+.text-block {
+  color: #283618;
+}

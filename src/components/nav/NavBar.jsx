@@ -35,6 +35,9 @@ export const NavBar = () => {
               <NavLink href="/harvest">Harvest Reports</NavLink>
             </NavItem>
             <NavItem>
+              <NavLink href="/calendar">Calendar</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink href="/plants">Common Plants Database</NavLink>
             </NavItem>
             {localStorage.getItem("reap_user") ? (
