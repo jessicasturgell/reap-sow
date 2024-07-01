@@ -1,38 +1,46 @@
-import { useNavigate } from "react-router-dom";
-import { createNewHarvestReport } from "../../services/harvestService.jsx";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Form.css";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  getHarvestReportsById,
+  updateHarvestReport,
+} from "../../services/harvestService.jsx";
 
-export const CreateNewHarvestForm = ({ currentUser }) => {
-  const navigate = useNavigate();
+export const EditHarvestForm = ({ currentUser }) => {
   const [harvestReport, setHarvestReport] = useState({
     name: "",
     gardenBedName: "",
-    userId: 0,
     datePlanted: "",
     dateHarvested: "",
-    weight: 0,
+    weight: "",
     notes: "",
   });
+  const { harvestId } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getHarvestReportsById(harvestId).then((data) => {
+      setHarvestReport(data);
+    });
+  }, [currentUser]);
 
   const handleSave = (event) => {
     event.preventDefault();
-    if (harvestReport.name.length > 0) {
-      const newHarvestReport = {
-        userId: currentUser.id,
-        name: harvestReport.name,
-        gardenBedName: harvestReport.gardenBedName,
-        datePlanted: harvestReport.datePlanted,
-        dateHarvested: harvestReport.dateHarvested,
-        weight: harvestReport.weight,
-        notes: harvestReport.notes,
-      };
 
-      createNewHarvestReport(newHarvestReport).then(() => {
-        navigate("/harvest");
-      });
-    }
+    const editedHarvestReport = {
+      id: harvestId,
+      name: harvestReport.name,
+      userId: harvestReport.userId,
+      datePlanted: harvestReport.datePlanted,
+      dateHarvested: harvestReport.dateHarvested,
+      userId: harvestReport.weight,
+      userId: harvestReport.notes,
+    };
+
+    updateHarvestReport(editedHarvestReport).then(() => {
+      navigate("/harvest");
+    });
   };
 
   const handleChange = (event) => {

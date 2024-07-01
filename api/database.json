@@ -138,6 +138,16 @@
       "notes": "Strawbs strawbing.",
       "timestamp": "2024-06-27T16:11:01.110Z",
       "id": 3
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "kuhfeiuwehf",
+      "timestamp": "2024-07-01T14:20:03.728Z",
+      "id": 4
     }
   ],
   "gardenPlots": [
@@ -229,7 +239,7 @@
   "gardenBeds": [
     {
       "id": 1,
-      "name": "My Garden",
+      "name": "Tomates",
       "userId": 1
     },
     {
@@ -247,11 +257,11 @@
     {
       "userId": 1,
       "name": "Eggplant",
+      "gardenBedName": "My Garden",
       "datePlanted": "2024-06-06",
       "dateHarvested": "2024-06-28",
       "weight": "50",
       "notes": "Eggcellent",
-      "img": "https://assets.bonappetit.com/photos/5f46963e5c43e3c9e13b2f1c/master/w_1600%2Cc_limit/20200814-HLY-FMC-Part-25810.jpg",
       "id": 4
     }
   ]

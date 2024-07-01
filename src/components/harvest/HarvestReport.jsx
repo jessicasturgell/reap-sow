@@ -49,50 +49,52 @@ export const HarvestReport = ({ currentUser }) => {
           track your yield here!
         </p>
       </div>
-      <section>
-        <Button
-          className="mt-3 ms-3"
-          color="success"
-          onClick={() => navigate("/harvest/create")}
-        >
-          New Harvest Report
-        </Button>
-
+      <Button
+        className="mt-3 ms-3"
+        color="success"
+        onClick={() => navigate("/harvest/create")}
+      >
+        New Harvest Report
+      </Button>
+      <section className="harvest-container">
         {allHarvestReports.map((harvest) => (
           <section className="harvest-reports" key={harvest.id}>
             <ListGroup className="m-3">
               <ListGroupItem color="success">
                 Plant: {harvest.name}
               </ListGroupItem>
-              <ListGroupItem color="success">
+              <ListGroupItem color="info">
+                Garden Bed: {harvest.gardenBedName}
+              </ListGroupItem>
+              <ListGroupItem color="warning">
                 Date Planted: {harvest.datePlanted}
               </ListGroupItem>
-              <ListGroupItem color="success">
+              <ListGroupItem color="warning">
                 Date Harvested: {harvest.dateHarvested}
               </ListGroupItem>
-              <ListGroupItem color="success">
+              <ListGroupItem color="warning">
                 Weight: {harvest.weight} grams
               </ListGroupItem>
-              <ListGroupItem color="success">
+              <ListGroupItem color="danger">
                 Notes: {harvest.notes !== "" ? harvest.notes : "No notes!"}
               </ListGroupItem>
-              {harvest.img !== "" && (
-                <ListGroupItem color="success">
-                  <img
-                    className="harvest-img"
-                    src={harvest.img}
-                    alt="Harvest"
-                  />
-                </ListGroupItem>
-              )}
+              <ListGroupItem color="success" className="care-btn-container">
+                <Button
+                  className="m-1"
+                  color="warning"
+                  onClick={() => navigate(`/harvest/edit/${harvest.id}`)}
+                >
+                  Edit
+                </Button>
+                <Button
+                  className="m-1"
+                  color="danger"
+                  onClick={() => handleDelete(harvest)}
+                >
+                  Delete
+                </Button>
+              </ListGroupItem>
             </ListGroup>
-            <Button
-              className="ms-3"
-              color="danger"
-              onClick={() => handleDelete(harvest)}
-            >
-              Delete
-            </Button>
           </section>
         ))}
       </section>
