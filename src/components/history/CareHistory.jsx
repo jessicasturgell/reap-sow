@@ -7,12 +7,14 @@ import {
 import { Button, ListGroup, ListGroupItem } from "reactstrap";
 import { getAllGardenBeds } from "../../services/gardenService.jsx";
 import { CareHistoryFilterBar } from "./CareHistoryFilterBar.jsx";
+import { useNavigate } from "react-router-dom";
 
 export const CareHistory = ({ currentUser }) => {
   const [allChecklists, setAllChecklists] = useState([]);
   const [gardenBeds, setGardenBeds] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredChecklists, setFilteredChecklist] = useState([]);
+  const navigate = useNavigate();
 
   const getAndSetCareHistory = () => {
     if (currentUser?.id) {

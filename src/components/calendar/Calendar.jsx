@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { getAllDates } from "../../services/calendarService.jsx";
+import { getDatesByUserId } from "../../services/calendarService.jsx";
 
 export const MyCalendar = ({ currentUser }) => {
   const [events, setEvents] = useState([]);
@@ -11,18 +11,20 @@ export const MyCalendar = ({ currentUser }) => {
   const localizer = momentLocalizer(moment);
 
   useEffect(() => {
-    getAllDates().then((meetupsArray) => {
-      const eventArray = meetupsArray.map((meetup) => {
-        return {
-          title: meetup.description,
-          start: meetup.startDate,
-          end: meetup.endDate,
-        };
-      });
+    if (currentUser?.id) {
+      getDatesByUserId(currentUser.id).then((eventsArray) => {
+        const eventArray = eventsArray.map((event) => {
+          return {
+            title: event.description,
+            start: event.startDate,
+            end: event.endDate,
+          };
+        });
 
-      setEvents(eventArray);
-    });
-  }, []);
+        setEvents(eventArray);
+      });
+    }
+  }, [currentUser]);
 
   return (
     <section>

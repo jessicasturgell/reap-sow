@@ -148,6 +148,16 @@
       "notes": "kuhfeiuwehf",
       "timestamp": "2024-07-01T14:20:03.728Z",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 3,
+      "isWatered": true,
+      "checkedHealth": false,
+      "checkedPests": false,
+      "notes": "",
+      "timestamp": "2024-07-01T18:36:57.774Z",
+      "id": 5
     }
   ],
   "gardenPlots": [
@@ -328,6 +338,13 @@
       "endDate": "2024-07-09T09:00:00Z",
       "description": "Check pest traps",
       "id": 9
+    },
+    {
+      "userId": 1,
+      "startDate": "2024-07-01T18:36:57.774Z",
+      "endDate": "2024-07-01T18:36:57.774Z",
+      "description": "Checklist Completed",
+      "id": 10
     }
   ]
 }

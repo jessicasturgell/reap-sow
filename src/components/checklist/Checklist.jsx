@@ -2,6 +2,7 @@ import "./Checklist.css";
 import { useEffect, useState } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { addNewChecklistData } from "../../services/checklistService.jsx";
+import { addNewDate } from "../../services/calendarService.jsx";
 
 export const Checklist = ({ currentUser, gardenBedId }) => {
   const [checklist, setChecklist] = useState({
@@ -60,7 +61,16 @@ export const Checklist = ({ currentUser, gardenBedId }) => {
       JSON.stringify(dataToSave)
     );
     addNewChecklistData(newChecklistData).then(() => {
-      window.alert("Saved!");
+      const newDateData = {
+        userId: currentUser.id,
+        startDate: newChecklistData.timestamp,
+        endDate: newChecklistData.timestamp,
+        description: `Checklist Completed`,
+      };
+
+      addNewDate(newDateData).then(() => {
+        window.alert("Saved!");
+      });
     });
   };
 
