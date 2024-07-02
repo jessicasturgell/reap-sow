@@ -89,7 +89,7 @@ export const CreateNewHarvestForm = ({ currentUser }) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="weight">Weight</Label>
+          <Label for="weight">Weight in Pounds</Label>
           <Input
             id="weight"
             name="weight"

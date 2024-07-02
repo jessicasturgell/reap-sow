@@ -33,8 +33,9 @@ export const MyCalendar = ({ currentUser }) => {
       <div className="header-container">
         <h2 className="h-2">Calendar</h2>
         <p className="text-block">
-          Utilize a built-in calendar app to help organize and schedule garden
-          maintenance here!
+          Utilize a built-in calendar app to help quickly see which days care
+          history was added! Try clicking on a checklist for an expanded view of
+          care details for that day.
         </p>
       </div>
       <div className="calendar-container">

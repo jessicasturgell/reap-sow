@@ -115,159 +115,49 @@
       "isWatered": true,
       "checkedHealth": true,
       "checkedPests": true,
-      "notes": "Tomatoes almost ready to harvest.",
-      "timestamp": "2024-06-21T14:39:59.387Z",
+      "notes": "Growing beautifully!",
+      "timestamp": "2024-07-02T15:34:33.850Z",
       "id": 1
     },
     {
       "userId": 1,
-      "gardenBedId": 3,
-      "isWatered": true,
-      "checkedHealth": false,
+      "gardenBedId": 1,
+      "isWatered": false,
+      "checkedHealth": true,
       "checkedPests": false,
-      "notes": "Strawbs strawbing.",
-      "timestamp": "2024-06-27T16:11:01.110Z",
+      "notes": "Needs watering and pest control.",
+      "timestamp": "2024-07-03T10:12:45.850Z",
       "id": 2
     },
     {
       "userId": 2,
-      "gardenBedId": 3,
+      "gardenBedId": 2,
       "isWatered": true,
-      "checkedHealth": false,
-      "checkedPests": false,
-      "notes": "Strawbs strawbing.",
-      "timestamp": "2024-06-27T16:11:01.110Z",
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "All plants look healthy.",
+      "timestamp": "2024-07-01T08:22:33.850Z",
       "id": 3
     },
     {
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": true,
-      "checkedHealth": true,
+      "userId": 3,
+      "gardenBedId": 2,
+      "isWatered": false,
+      "checkedHealth": false,
       "checkedPests": true,
-      "notes": "kuhfeiuwehf",
-      "timestamp": "2024-07-01T14:20:03.728Z",
+      "notes": "Need to check plant health.",
+      "timestamp": "2024-07-02T14:15:20.850Z",
       "id": 4
     },
     {
-      "userId": 1,
-      "gardenBedId": 3,
+      "userId": 4,
+      "gardenBedId": 1,
       "isWatered": true,
-      "checkedHealth": false,
+      "checkedHealth": true,
       "checkedPests": false,
-      "notes": "",
-      "timestamp": "2024-07-01T18:36:57.774Z",
+      "notes": "Watered plants but noticed some pest issues.",
+      "timestamp": "2024-07-01T12:45:33.850Z",
       "id": 5
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": false,
-      "checkedHealth": false,
-      "checkedPests": true,
-      "notes": "",
-      "timestamp": "2024-07-01T19:38:10.311Z",
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": true,
-      "checkedHealth": true,
-      "checkedPests": true,
-      "notes": "",
-      "timestamp": "2024-07-01T19:52:00.630Z",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 3,
-      "isWatered": true,
-      "checkedHealth": false,
-      "checkedPests": true,
-      "notes": "",
-      "timestamp": "2024-07-01T19:54:13.569Z",
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 3,
-      "isWatered": true,
-      "checkedHealth": true,
-      "checkedPests": true,
-      "notes": "",
-      "timestamp": "2024-07-01T19:55:51.936Z",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": true,
-      "checkedHealth": true,
-      "checkedPests": false,
-      "notes": "",
-      "timestamp": "2024-07-01T19:57:13.635Z",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": true,
-      "checkedHealth": true,
-      "checkedPests": true,
-      "notes": "",
-      "timestamp": "2024-07-01T19:57:38.518Z",
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 3,
-      "isWatered": true,
-      "checkedHealth": true,
-      "checkedPests": false,
-      "notes": "",
-      "timestamp": "2024-07-01T19:59:28.343Z",
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": true,
-      "checkedHealth": false,
-      "checkedPests": false,
-      "notes": "",
-      "timestamp": "2024-07-02T13:13:50.632Z",
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 3,
-      "isWatered": false,
-      "checkedHealth": true,
-      "checkedPests": false,
-      "notes": "",
-      "timestamp": "2024-07-02T13:15:32.851Z",
-      "id": 14
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 3,
-      "isWatered": false,
-      "checkedHealth": true,
-      "checkedPests": true,
-      "notes": "",
-      "timestamp": "2024-07-02T13:18:55.234Z",
-      "id": 15
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 3,
-      "isWatered": true,
-      "checkedHealth": true,
-      "checkedPests": true,
-      "notes": "",
-      "timestamp": "2024-07-02T14:14:44.019Z",
-      "id": 16
     }
   ],
   "gardenPlots": [
@@ -378,29 +268,93 @@
       "userId": 1,
       "name": "Eggplant",
       "gardenBedName": "My Garden",
-      "datePlanted": "2024-06-06",
-      "dateHarvested": "2024-06-28",
-      "weight": "50",
-      "notes": "Eggcellent",
+      "datePlanted": "2024-06-01",
+      "dateHarvested": "2024-08-02",
+      "weight": "3",
+      "notes": "",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "name": "Tomatoes",
+      "gardenBedName": "Tomates",
+      "datePlanted": "2024-05-01",
+      "dateHarvested": "2024-07-10",
+      "weight": "5",
+      "notes": "Good yield, vibrant color",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "name": "Carrots",
+      "gardenBedName": "My Garden",
+      "datePlanted": "2024-04-15",
+      "dateHarvested": "2024-07-05",
+      "weight": "2.5",
+      "notes": "Sweet and crunchy",
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "name": "Lettuce",
+      "gardenBedName": "My Garden",
+      "datePlanted": "2024-05-10",
+      "dateHarvested": "2024-06-25",
+      "weight": "1",
+      "notes": "Crisp and fresh",
       "id": 4
+    },
+    {
+      "userId": 4,
+      "name": "Strawberries",
+      "gardenBedName": "Berry Bed",
+      "datePlanted": "2024-04-20",
+      "dateHarvested": "2024-07-15",
+      "weight": "3.2",
+      "notes": "Sweet and juicy",
+      "id": 5
     }
   ],
   "dates": [
     {
       "userId": 1,
-      "startDate": "2024-07-01T18:36:57.774Z",
-      "endDate": "2024-07-01T18:36:57.774Z",
+      "startDate": "2024-07-02T15:34:33.850Z",
+      "endDate": "2024-07-02T15:34:33.850Z",
       "description": "Checklist Completed",
-      "id": 10,
-      "checklistId": 1
+      "checklistId": 1,
+      "id": 1
     },
     {
       "userId": 1,
-      "startDate": "2024-07-02T14:14:44.019Z",
-      "endDate": "2024-07-02T14:14:44.019Z",
+      "startDate": "2024-07-03T10:12:45.850Z",
+      "endDate": "2024-07-03T10:30:45.850Z",
       "description": "Checklist Completed",
-      "checklistId": 16,
-      "id": 11
+      "checklistId": 2,
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "startDate": "2024-07-01T08:22:33.850Z",
+      "endDate": "2024-07-01T08:45:33.850Z",
+      "description": "Checklist Completed",
+      "checklistId": 3,
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "startDate": "2024-07-02T14:15:20.850Z",
+      "endDate": "2024-07-02T14:30:20.850Z",
+      "description": "Checklist Completed",
+      "checklistId": 4,
+      "id": 4
+    },
+    {
+      "userId": 4,
+      "startDate": "2024-07-01T12:45:33.850Z",
+      "endDate": "2024-07-01T13:00:33.850Z",
+      "description": "Checklist Completed",
+      "checklistId": 5,
+      "id": 5
     }
   ]
 }

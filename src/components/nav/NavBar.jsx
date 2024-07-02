@@ -3,12 +3,16 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Collapse,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
   Nav,
   NavItem,
   NavLink,
   Navbar,
   NavbarBrand,
   NavbarToggler,
+  UncontrolledDropdown,
 } from "reactstrap";
 
 export const NavBar = () => {
@@ -28,14 +32,21 @@ export const NavBar = () => {
             <NavItem>
               <NavLink href="/garden">My Garden</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="/history">Plant Care History</NavLink>
-            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Plant Care
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem>
+                  <NavLink href="/history">History</NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink href="/calendar">Calendar</NavLink>
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
             <NavItem>
               <NavLink href="/harvest">Harvest Reports</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/calendar">Calendar</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/plants">Common Plants Database</NavLink>

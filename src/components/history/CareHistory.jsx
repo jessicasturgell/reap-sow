@@ -119,7 +119,7 @@ export const CareHistory = ({ currentUser }) => {
             </ListGroup>
           ))
         ) : (
-          <p>No care history found.</p>
+          <p className="null-p">No care history found.</p>
         )}
       </section>
     </section>

@@ -91,7 +91,7 @@ export const HarvestReport = ({ currentUser }) => {
                   Date Harvested: {harvest.dateHarvested}
                 </ListGroupItem>
                 <ListGroupItem color="warning">
-                  Weight: {harvest.weight} grams
+                  Weight: {harvest.weight}lbs
                 </ListGroupItem>
                 <ListGroupItem color="danger">
                   Notes: {harvest.notes !== "" ? harvest.notes : "No notes!"}
@@ -116,7 +116,7 @@ export const HarvestReport = ({ currentUser }) => {
             </section>
           ))
         ) : (
-          <p>No harvest reports found.</p>
+          <p className="null-p">No harvest reports found.</p>
         )}
       </section>
     </section>
