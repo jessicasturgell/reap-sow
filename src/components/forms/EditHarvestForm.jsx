@@ -34,8 +34,8 @@ export const EditHarvestForm = ({ currentUser }) => {
       userId: harvestReport.userId,
       datePlanted: harvestReport.datePlanted,
       dateHarvested: harvestReport.dateHarvested,
-      userId: harvestReport.weight,
-      userId: harvestReport.notes,
+      weight: harvestReport.weight,
+      notes: harvestReport.notes,
     };
 
     updateHarvestReport(editedHarvestReport).then(() => {
