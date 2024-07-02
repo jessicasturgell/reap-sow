@@ -158,6 +158,16 @@
       "notes": "Watered plants but noticed some pest issues.",
       "timestamp": "2024-07-01T12:45:33.850Z",
       "id": 5
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 3,
+      "isWatered": true,
+      "checkedHealth": false,
+      "checkedPests": false,
+      "notes": "",
+      "timestamp": "2024-07-02T17:44:52.019Z",
+      "id": 6
     }
   ],
   "gardenPlots": [
@@ -355,6 +365,14 @@
       "description": "Checklist Completed",
       "checklistId": 5,
       "id": 5
+    },
+    {
+      "userId": 1,
+      "startDate": "2024-07-02T17:44:52.019Z",
+      "endDate": "2024-07-02T17:44:52.019Z",
+      "description": "Checklist Completed",
+      "checklistId": 6,
+      "id": 6
     }
   ]
 }

@@ -9,11 +9,11 @@ import { PlantNewCropForm } from "../components/forms/PlantNewCrop.jsx";
 import { EditGardenBed } from "../components/forms/EditGardenBed.jsx";
 import { EditPlantedCrop } from "../components/forms/EditPlantedCrop.jsx";
 import { CareHistory } from "../components/history/CareHistory.jsx";
+import { CareHistoryExpand } from "../components/history/CareHistoryExpand.jsx";
 import { HarvestReport } from "../components/harvest/HarvestReport.jsx";
 import { CreateNewHarvestForm } from "../components/forms/CreateNewHarvestForm.jsx";
 import { EditHarvestForm } from "../components/forms/EditHarvestForm.jsx";
 import { MyCalendar } from "../components/calendar/Calendar.jsx";
-import { CareHistoryExpand } from "../components/history/CareHistoryExpand.jsx";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -63,7 +63,7 @@ export const ApplicationViews = () => {
         <Route path="history">
           <Route index element={<CareHistory currentUser={currentUser} />} />
           <Route
-            path="history/:checklistId"
+            path=":checklistId"
             element={<CareHistoryExpand currentUser={currentUser} />}
           />
         </Route>

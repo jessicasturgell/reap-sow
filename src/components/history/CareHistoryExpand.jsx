@@ -3,19 +3,44 @@ import React, { useEffect, useState } from "react";
 import { getChecklistsById } from "../../services/checklistService.jsx";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import { useParams } from "react-router-dom";
+import { getAllGardenBeds } from "../../services/gardenService.jsx";
 
-export const CareHistoryExpand = () => {
+export const CareHistoryExpand = ({ currentUser }) => {
   const [checklist, setChecklist] = useState({});
+  const [gardenBeds, setGardenBeds] = useState([]);
   const { checklistId } = useParams();
 
   useEffect(() => {
-    if (currentUser?.id) {
-      getChecklistsById(checklistId).then((data) => {
-        const checklistObj = data[0];
-        setChecklist(checklistObj);
-      });
-    }
+    getChecklistsById(checklistId).then((data) => {
+      setChecklist(data);
+    });
   }, [checklistId]);
+
+  const getAndSetGardenBeds = () => {
+    getAllGardenBeds()
+      .then((gardenBedsArray) => {
+        setGardenBeds(gardenBedsArray);
+      })
+      .catch((error) => {
+        console.error("Error fetching garden beds:", error);
+      });
+  };
+
+  useEffect(() => {
+    getAndSetGardenBeds();
+  }, [currentUser]);
+
+  const findGardenBedName = (id) => {
+    const gardenBed = gardenBeds.find((bed) => bed.id === id);
+    return gardenBed ? gardenBed.name : id;
+  };
+
+  const getFormattedDate = (timestamp) => {
+    const date = new Date(timestamp);
+    return isNaN(date.getTime())
+      ? "Invalid date"
+      : date.toISOString().split("T")[0];
+  };
 
   return (
     <section>
@@ -26,24 +51,27 @@ export const CareHistoryExpand = () => {
       <section className="care-history">
         <ListGroup className="m-3">
           <ListGroupItem color="success">
-            {new Date(checklist.timestamp).toISOString().split("T")[0]}
+            {getFormattedDate(checklist?.timestamp)}
           </ListGroupItem>
-          <ListGroupItem color="info">To Do</ListGroupItem>
-          <ListGroupItem color="warning">
-            {checklist.isWatered ? "Watered!" : "Did not water :("}
+          <ListGroupItem color="info">
+            {" "}
+            {findGardenBedName(checklist?.gardenBedId)}
           </ListGroupItem>
           <ListGroupItem color="warning">
-            {checklist.checkedHealth
+            {checklist?.isWatered ? "Watered!" : "Did not water :("}
+          </ListGroupItem>
+          <ListGroupItem color="warning">
+            {checklist?.checkedHealth
               ? "Checked health!"
               : "Did not check health :("}
           </ListGroupItem>
           <ListGroupItem color="warning">
-            {checklist.checkedPests
+            {checklist?.checkedPests
               ? "Checked for pests!"
               : "Did not check for pests :("}
           </ListGroupItem>
           <ListGroupItem color="danger">
-            {checklist.notes !== "" ? checklist.notes : "No notes!"}
+            {checklist?.notes !== "" ? checklist?.notes : "No notes!"}
           </ListGroupItem>
         </ListGroup>
       </section>
