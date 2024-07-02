@@ -4,6 +4,7 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { getDatesByUserId } from "../../services/calendarService.jsx";
+import { useParams } from "react-router-dom";
 
 export const MyCalendar = ({ currentUser }) => {
   const [events, setEvents] = useState([]);
@@ -14,8 +15,9 @@ export const MyCalendar = ({ currentUser }) => {
     if (currentUser?.id) {
       getDatesByUserId(currentUser.id).then((eventsArray) => {
         const eventArray = eventsArray.map((event) => {
+          const urlString = `/history/${event.checklistId}`;
           return {
-            title: event.description,
+            title: <a href={urlString}>{event.description}</a>,
             start: event.startDate,
             end: event.endDate,
           };
@@ -42,7 +44,7 @@ export const MyCalendar = ({ currentUser }) => {
             events={events}
             startAccessor="start"
             endAccessor="end"
-            style={{ height: 1000, width: 1250 }}
+            style={{ height: 1000, width: 1250, color: "black" }}
           />
         </div>
       </div>

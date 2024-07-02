@@ -10,7 +10,7 @@ export const getDatesByUserId = (userId) => {
 
 export const addNewDate = (date) => {
   return fetch(`http://localhost:8088/dates`, {
-    method: "Post",
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },

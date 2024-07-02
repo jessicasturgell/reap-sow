@@ -25,3 +25,8 @@
 .text-block {
   color: #283618;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}

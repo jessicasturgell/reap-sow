@@ -82,7 +82,10 @@ export const CareHistory = ({ currentUser }) => {
         {filteredChecklists.length > 0 ? (
           filteredChecklists.map((checklist) => (
             <ListGroup className="m-3" key={checklist.id}>
-              <ListGroupItem color="success">
+              <ListGroupItem
+                color="success"
+                onClick={() => navigate(`/history/${checklist.id}`)}
+              >
                 {new Date(checklist.timestamp).toISOString().split("T")[0]}
               </ListGroupItem>
               <ListGroupItem color="info">

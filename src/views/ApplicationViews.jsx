@@ -13,6 +13,7 @@ import { HarvestReport } from "../components/harvest/HarvestReport.jsx";
 import { CreateNewHarvestForm } from "../components/forms/CreateNewHarvestForm.jsx";
 import { EditHarvestForm } from "../components/forms/EditHarvestForm.jsx";
 import { MyCalendar } from "../components/calendar/Calendar.jsx";
+import { CareHistoryExpand } from "../components/history/CareHistoryExpand.jsx";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -59,10 +60,13 @@ export const ApplicationViews = () => {
           path="plants"
           element={<PlantList currentUser={currentUser} />}
         />
-        <Route
-          path="history"
-          element={<CareHistory currentUser={currentUser} />}
-        />
+        <Route path="history">
+          <Route index element={<CareHistory currentUser={currentUser} />} />
+          <Route
+            path="history/:checklistId"
+            element={<CareHistoryExpand currentUser={currentUser} />}
+          />
+        </Route>
         <Route path="harvest">
           <Route index element={<HarvestReport currentUser={currentUser} />} />
           <Route

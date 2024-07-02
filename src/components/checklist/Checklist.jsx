@@ -60,17 +60,20 @@ export const Checklist = ({ currentUser, gardenBedId }) => {
       `checklist-${gardenBedId}`,
       JSON.stringify(dataToSave)
     );
-    addNewChecklistData(newChecklistData).then(() => {
-      const newDateData = {
-        userId: currentUser.id,
-        startDate: newChecklistData.timestamp,
-        endDate: newChecklistData.timestamp,
-        description: `Checklist Completed`,
-      };
+    addNewChecklistData(newChecklistData).then((parsedId) => {
+      if (parsedId) {
+        const newDateData = {
+          userId: currentUser.id,
+          startDate: newChecklistData.timestamp,
+          endDate: newChecklistData.timestamp,
+          description: `Checklist Completed`,
+          checklistId: parsedId,
+        };
 
-      addNewDate(newDateData).then(() => {
-        window.alert("Saved!");
-      });
+        addNewDate(newDateData).then(() => {
+          window.alert("Saved!");
+        });
+      }
     });
   };
 

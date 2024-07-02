@@ -158,6 +158,116 @@
       "notes": "",
       "timestamp": "2024-07-01T18:36:57.774Z",
       "id": 5
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": false,
+      "checkedHealth": false,
+      "checkedPests": true,
+      "notes": "",
+      "timestamp": "2024-07-01T19:38:10.311Z",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "",
+      "timestamp": "2024-07-01T19:52:00.630Z",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 3,
+      "isWatered": true,
+      "checkedHealth": false,
+      "checkedPests": true,
+      "notes": "",
+      "timestamp": "2024-07-01T19:54:13.569Z",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 3,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "",
+      "timestamp": "2024-07-01T19:55:51.936Z",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": false,
+      "notes": "",
+      "timestamp": "2024-07-01T19:57:13.635Z",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "",
+      "timestamp": "2024-07-01T19:57:38.518Z",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 3,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": false,
+      "notes": "",
+      "timestamp": "2024-07-01T19:59:28.343Z",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "checkedHealth": false,
+      "checkedPests": false,
+      "notes": "",
+      "timestamp": "2024-07-02T13:13:50.632Z",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 3,
+      "isWatered": false,
+      "checkedHealth": true,
+      "checkedPests": false,
+      "notes": "",
+      "timestamp": "2024-07-02T13:15:32.851Z",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 3,
+      "isWatered": false,
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "",
+      "timestamp": "2024-07-02T13:18:55.234Z",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 3,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "",
+      "timestamp": "2024-07-02T14:14:44.019Z",
+      "id": 16
     }
   ],
   "gardenPlots": [
@@ -278,73 +388,19 @@
   "dates": [
     {
       "userId": 1,
-      "startDate": "2024-07-01T08:00:00Z",
-      "endDate": "2024-07-01T10:00:00Z",
-      "description": "Harvest strawberries",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "startDate": "2024-07-03T07:30:00Z",
-      "endDate": "2024-07-03T09:30:00Z",
-      "description": "Water garden",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "startDate": "2024-07-05T06:00:00Z",
-      "endDate": "2024-07-05T08:00:00Z",
-      "description": "Weed the flower beds",
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "startDate": "2024-07-02T09:00:00Z",
-      "endDate": "2024-07-02T11:00:00Z",
-      "description": "Plant new herbs",
-      "id": 4
-    },
-    {
-      "userId": 2,
-      "startDate": "2024-07-04T14:00:00Z",
-      "endDate": "2024-07-04T16:00:00Z",
-      "description": "Trim bushes",
-      "id": 5
-    },
-    {
-      "userId": 2,
-      "startDate": "2024-07-06T10:00:00Z",
-      "endDate": "2024-07-06T12:00:00Z",
-      "description": "Fertilize lawn",
-      "id": 6
-    },
-    {
-      "userId": 3,
-      "startDate": "2024-07-07T13:00:00Z",
-      "endDate": "2024-07-07T15:00:00Z",
-      "description": "Harvest tomatoes",
-      "id": 7
-    },
-    {
-      "userId": 3,
-      "startDate": "2024-07-08T08:30:00Z",
-      "endDate": "2024-07-08T10:30:00Z",
-      "description": "Prune fruit trees",
-      "id": 8
-    },
-    {
-      "userId": 3,
-      "startDate": "2024-07-09T07:00:00Z",
-      "endDate": "2024-07-09T09:00:00Z",
-      "description": "Check pest traps",
-      "id": 9
-    },
-    {
-      "userId": 1,
       "startDate": "2024-07-01T18:36:57.774Z",
       "endDate": "2024-07-01T18:36:57.774Z",
       "description": "Checklist Completed",
-      "id": 10
+      "id": 10,
+      "checklistId": 1
+    },
+    {
+      "userId": 1,
+      "startDate": "2024-07-02T14:14:44.019Z",
+      "endDate": "2024-07-02T14:14:44.019Z",
+      "description": "Checklist Completed",
+      "checklistId": 16,
+      "id": 11
     }
   ]
 }

@@ -1,9 +1,18 @@
 .care-btn-container {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  justify-content: end;
 }
 
 .harvest-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-input {
+  width: 325px;
 }
