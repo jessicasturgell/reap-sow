@@ -71,14 +71,14 @@ export const MyGardenBed = ({ currentUser, gardenBed, onDelete }) => {
           );
         }}
       >
-        Edit Bed
+        Edit
       </Button>
       <Button
         className="ms-1"
         color="danger"
         onClick={() => onDelete(gardenBed.id)}
       >
-        Delete Bed
+        Delete
       </Button>
     </div>
   );

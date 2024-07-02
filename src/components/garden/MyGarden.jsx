@@ -65,7 +65,7 @@ export const MyGarden = ({ currentUser }) => {
               );
             }}
           >
-            Create New Garden Bed
+            New Garden Bed
           </Button>
         </div>
       </section>
