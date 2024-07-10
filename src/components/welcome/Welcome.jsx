@@ -43,7 +43,7 @@ export const Welcome = () => {
           <h1 className="welcome-h1">Hello!</h1>
           <h2 className="welcome-h2">
             Reap/Sow is a garden management system developed for and by
-            Appalachian gardners. We hope that these tools can be utilized
+            Appalachian gardeners. We hope that these tools can be utilized
             across the region to ensure the continued development of local
             agriculture.<hr></hr>Try visiting one of the pages below to get
             started!

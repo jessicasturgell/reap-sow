@@ -106,6 +106,11 @@
       "id": 5,
       "username": "LonnieKemmer",
       "email": "lonniekemmer@email.com"
+    },
+    {
+      "username": "New",
+      "email": "new@email.com",
+      "id": 6
     }
   ],
   "checklists": [
@@ -118,16 +123,6 @@
       "notes": "Growing beautifully!",
       "timestamp": "2024-07-02T15:34:33.850Z",
       "id": 1
-    },
-    {
-      "userId": 1,
-      "gardenBedId": 1,
-      "isWatered": false,
-      "checkedHealth": true,
-      "checkedPests": false,
-      "notes": "Needs watering and pest control.",
-      "timestamp": "2024-07-03T10:12:45.850Z",
-      "id": 2
     },
     {
       "userId": 2,
@@ -161,12 +156,12 @@
     },
     {
       "userId": 1,
-      "gardenBedId": 3,
+      "gardenBedId": 1,
       "isWatered": true,
-      "checkedHealth": false,
-      "checkedPests": false,
-      "notes": "",
-      "timestamp": "2024-07-02T17:44:52.019Z",
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "Looks great!",
+      "timestamp": "2024-07-03T19:42:51.447Z",
       "id": 6
     }
   ],
@@ -208,10 +203,10 @@
     },
     {
       "userId": 1,
-      "plantId": 2,
+      "plantId": "2",
       "gardenBedId": 1,
-      "newRow": false,
-      "id": 6
+      "id": 6,
+      "newRow": false
     },
     {
       "userId": 1,
@@ -250,16 +245,16 @@
     },
     {
       "userId": 1,
-      "plantId": 4,
+      "plantId": "4",
       "gardenBedId": 3,
-      "newRow": false,
-      "id": 12
+      "id": 12,
+      "newRow": false
     }
   ],
   "gardenBeds": [
     {
       "id": 1,
-      "name": "Tomates",
+      "name": "My Garden",
       "userId": 1
     },
     {
@@ -268,32 +263,12 @@
       "userId": 2
     },
     {
-      "userId": 1,
+      "id": 3,
       "name": "Berry Bed",
-      "id": 3
+      "userId": 1
     }
   ],
   "harvests": [
-    {
-      "userId": 1,
-      "name": "Eggplant",
-      "gardenBedName": "My Garden",
-      "datePlanted": "2024-06-01",
-      "dateHarvested": "2024-08-02",
-      "weight": "3",
-      "notes": "",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "name": "Tomatoes",
-      "gardenBedName": "Tomates",
-      "datePlanted": "2024-05-01",
-      "dateHarvested": "2024-07-10",
-      "weight": "5",
-      "notes": "Good yield, vibrant color",
-      "id": 2
-    },
     {
       "userId": 2,
       "name": "Carrots",
@@ -323,6 +298,15 @@
       "weight": "3.2",
       "notes": "Sweet and juicy",
       "id": 5
+    },
+    {
+      "id": 6,
+      "name": "Strawberries",
+      "userId": 1,
+      "datePlanted": "2024-07-03",
+      "dateHarvested": "2024-07-03",
+      "weight": "3.25",
+      "notes": ""
     }
   ],
   "dates": [
@@ -333,14 +317,6 @@
       "description": "Checklist Completed",
       "checklistId": 1,
       "id": 1
-    },
-    {
-      "userId": 1,
-      "startDate": "2024-07-03T10:12:45.850Z",
-      "endDate": "2024-07-03T10:30:45.850Z",
-      "description": "Checklist Completed",
-      "checklistId": 2,
-      "id": 2
     },
     {
       "userId": 2,
@@ -368,8 +344,8 @@
     },
     {
       "userId": 1,
-      "startDate": "2024-07-02T17:44:52.019Z",
-      "endDate": "2024-07-02T17:44:52.019Z",
+      "startDate": "2024-07-03T19:42:51.447Z",
+      "endDate": "2024-07-03T19:42:51.447Z",
       "description": "Checklist Completed",
       "checklistId": 6,
       "id": 6
