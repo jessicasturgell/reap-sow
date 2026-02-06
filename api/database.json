@@ -163,6 +163,16 @@
       "notes": "Looks great!",
       "timestamp": "2024-07-03T19:42:51.447Z",
       "id": 6
+    },
+    {
+      "userId": 1,
+      "gardenBedId": 1,
+      "isWatered": true,
+      "checkedHealth": true,
+      "checkedPests": true,
+      "notes": "",
+      "timestamp": "2026-02-06T23:29:36.053Z",
+      "id": 7
     }
   ],
   "gardenPlots": [
@@ -349,6 +359,14 @@
       "description": "Checklist Completed",
       "checklistId": 6,
       "id": 6
+    },
+    {
+      "userId": 1,
+      "startDate": "2026-02-06T23:29:36.053Z",
+      "endDate": "2026-02-06T23:29:36.053Z",
+      "description": "Checklist Completed",
+      "checklistId": 7,
+      "id": 7
     }
   ]
 }
