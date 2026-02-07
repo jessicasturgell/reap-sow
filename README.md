@@ -43,7 +43,7 @@ git clone https://github.com/jessicasturgell/reap-sow.git
 cd reap-sow
 ```
 
-### Start the Mock Database
+### Start the Mock Database:
 ```
 json-server -p 8088 api/database.json
 ```
