@@ -7,6 +7,32 @@
   
 All data is handled via a mock JSON database with full CRUD functionality, simulating a backend API for local development and prototyping.
 
+## Screenshots
+
+### Login / Registration
+![Login](./screenshots/login.png)
+
+### Welcome
+![Welcome](./screenshots/welcome.png)
+
+### My Garden
+![My Garden](./screenshots/mygarden.png)
+
+### Care History Calendar
+![Care History Calendar](./screenshots/calendar.png)
+
+### Care History List
+![Care History List](./screenshots/history.png)
+
+### Harvest Reports
+![Harvest Reports](./screenshots/harvest.png)
+
+### Harvest Form
+![Harvest Form](./screenshots/form.png)
+
+### Plants Database
+![Plants Database](./screenshots/plants.png)
+
 ## Installation
 ### Install Dependencies:
 - Ensure you have Node.js installed.
