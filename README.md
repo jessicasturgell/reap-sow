@@ -9,7 +9,7 @@ All data is handled via a mock JSON database with full CRUD functionality, simul
 
 ## Screenshots
 
-### Login / Registration
+### Login
 ![Login](./screenshots/login.png)
 
 ### Welcome
